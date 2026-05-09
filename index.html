@@ -1,0 +1,2679 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZAVÉRA — Plan de Lanzamiento · Café Funcional Premium en México</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=JetBrains+Mono:wght@400;500;600&family=Inter+Tight:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg: #f5f1ea;
+    --bg-card: #fbf9f4;
+    --bg-dark: #1a1a1a;
+    --ink: #1a1a1a;
+    --ink-soft: #4a4a4a;
+    --ink-muted: #8a8580;
+    --line: #d8d0c0;
+    --line-soft: #e8e2d3;
+    --accent: #b8492a;
+    --accent-soft: #d97757;
+    --accent-bg: #f5e6dc;
+    --green: #4a6b3a;
+    --green-bg: #e3ebd9;
+    --amber: #b8862a;
+    --amber-bg: #f5ebd0;
+    --red: #9a3636;
+    --red-bg: #f0d8d8;
+    --serif: 'Fraunces', Georgia, serif;
+    --sans: 'Inter Tight', -apple-system, sans-serif;
+    --mono: 'JetBrains Mono', monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.55;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* === LAYOUT === */
+.layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    max-width: 1400px;
+    margin: 0 auto;
+    min-height: 100vh;
+}
+
+/* === SIDEBAR === */
+.sidebar {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    padding: 40px 28px;
+    border-right: 1px solid var(--line);
+    background: var(--bg-card);
+}
+
+.sidebar-brand {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 4px;
+}
+
+.sidebar-brand em {
+    font-style: italic;
+    color: var(--accent);
+    font-weight: 400;
+}
+
+.sidebar-meta {
+    font-family: var(--mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--ink-muted);
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--line);
+}
+
+.sidebar-progress {
+    margin-bottom: 32px;
+    padding: 18px;
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+}
+
+.sidebar-progress-label {
+    font-family: var(--mono);
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--ink-muted);
+    margin-bottom: 8px;
+}
+
+.sidebar-progress-value {
+    font-family: var(--serif);
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 1;
+    margin-bottom: 8px;
+    color: var(--accent);
+}
+
+.sidebar-progress-value::after { content: '%'; font-size: 18px; color: var(--ink-muted); margin-left: 2px; }
+
+.sidebar-progress-bar {
+    height: 4px;
+    background: var(--line);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.sidebar-progress-fill {
+    height: 100%;
+    background: var(--accent);
+    transition: width 0.4s ease;
+    width: 0%;
+}
+
+.nav-section { margin-bottom: 24px; }
+
+.nav-section-title {
+    font-family: var(--mono);
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--ink-muted);
+    margin-bottom: 10px;
+}
+
+.nav-item {
+    display: block;
+    padding: 7px 0;
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-size: 13px;
+    border-bottom: 1px solid var(--line-soft);
+    transition: color 0.15s, padding-left 0.15s;
+}
+
+.nav-item:hover { color: var(--accent); padding-left: 4px; }
+
+.nav-item-num {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--ink-muted);
+    margin-right: 8px;
+}
+
+/* === MAIN === */
+.main { padding: 60px 80px 120px; max-width: 1000px; }
+
+/* === HERO === */
+.hero { margin-bottom: 80px; }
+
+.hero-eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    margin-bottom: 24px;
+}
+
+.hero-title {
+    font-family: var(--serif);
+    font-size: 72px;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    font-weight: 400;
+    margin-bottom: 32px;
+}
+
+.hero-title em { font-style: italic; font-weight: 300; color: var(--accent); }
+
+.hero-lede {
+    font-size: 19px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    max-width: 680px;
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+
+.hero-lede strong { font-weight: 600; color: var(--ink); }
+
+.hero-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    margin-top: 48px;
+}
+
+.hero-stat { background: var(--bg); padding: 24px 20px; }
+
+.hero-stat-value {
+    font-family: var(--serif);
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin-bottom: 6px;
+}
+
+.hero-stat-value small { font-size: 16px; color: var(--ink-muted); font-weight: 400; }
+
+.hero-stat-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--ink-muted);
+    line-height: 1.4;
+}
+
+/* === EXECUTIVE SUMMARY === */
+.exec-summary {
+    background: var(--bg-dark);
+    color: #f5f1ea;
+    padding: 56px 56px;
+    margin-bottom: 80px;
+    border-radius: 4px;
+}
+
+.exec-summary h2 {
+    font-family: var(--serif);
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.1;
+    margin-bottom: 28px;
+    letter-spacing: -0.02em;
+}
+
+.exec-summary h2 em { font-style: italic; color: var(--accent-soft); }
+
+.exec-summary p {
+    font-size: 16px;
+    line-height: 1.65;
+    margin-bottom: 16px;
+    color: #d8d0c0;
+    font-weight: 300;
+}
+
+.exec-summary p strong { color: #f5f1ea; font-weight: 500; }
+
+.exec-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 36px;
+    padding-top: 36px;
+    border-top: 1px solid #3a3a3a;
+}
+
+.exec-pillar-num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 36px;
+    color: var(--accent-soft);
+    margin-bottom: 8px;
+    font-weight: 300;
+}
+
+.exec-pillar-title {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: #f5f1ea;
+}
+
+.exec-pillar-desc { font-size: 13px; color: #a8a098; line-height: 1.5; font-weight: 300; }
+
+/* === TIMELINE === */
+.timeline-container { margin-bottom: 80px; }
+
+.timeline-wrapper {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 0;
+    border: 1px solid var(--line);
+    background: var(--bg-card);
+}
+
+.timeline-month-col {
+    padding: 16px 12px;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line-soft);
+    font-family: var(--mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-muted);
+    background: var(--bg);
+}
+
+.timeline-row {
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--line-soft);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.timeline-row:last-child { border-bottom: none; }
+
+.timeline-phase-tag {
+    font-family: var(--mono);
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 4px 8px;
+    border-radius: 2px;
+    font-weight: 600;
+    flex-shrink: 0;
+    width: 70px;
+    text-align: center;
+}
+
+.tag-f1 { background: #e8dcd0; color: #6b3a1a; }
+.tag-f2 { background: #f5e6dc; color: #b8492a; }
+.tag-f3 { background: #e3ebd9; color: #4a6b3a; }
+.tag-f4 { background: #d9e3eb; color: #2a5066; }
+.tag-f5 { background: #f5ebd0; color: #8a6320; }
+.tag-f6 { background: #1a1a1a; color: #f5f1ea; }
+
+.timeline-row-content { flex: 1; font-size: 13px; color: var(--ink-soft); }
+.timeline-row-content strong { color: var(--ink); font-weight: 600; display: block; margin-bottom: 2px; }
+
+/* === SECTION === */
+.section { margin-bottom: 96px; scroll-margin-top: 20px; }
+
+.section-header {
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    gap: 24px;
+    align-items: end;
+    padding-bottom: 24px;
+    border-bottom: 2px solid var(--ink);
+    margin-bottom: 40px;
+}
+
+.section-num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 64px;
+    line-height: 0.9;
+    font-weight: 300;
+    color: var(--accent);
+}
+
+.section-title-block h2 {
+    font-family: var(--serif);
+    font-size: 42px;
+    line-height: 1;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+}
+
+.section-eyebrow {
+    font-family: var(--mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--ink-muted);
+    margin-bottom: 4px;
+}
+
+.section-duration {
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-soft);
+    text-align: right;
+    line-height: 1.4;
+}
+
+.section-duration strong { color: var(--ink); display: block; font-size: 14px; }
+
+.section-intro {
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    max-width: 720px;
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+.section-intro strong { color: var(--ink); font-weight: 600; }
+
+/* === TASK BLOCK === */
+.task-block {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    margin-bottom: 24px;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.task-header {
+    padding: 22px 28px;
+    border-bottom: 1px solid var(--line-soft);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+.task-header-left { flex: 1; }
+
+.task-header h3 {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin-bottom: 6px;
+}
+
+.task-meta {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    font-family: var(--mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-muted);
+}
+
+.task-meta-item { display: flex; align-items: center; gap: 6px; }
+.task-meta-item::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--ink-muted); }
+.task-meta-item.priority-high::before { background: var(--red); }
+.task-meta-item.priority-med::before { background: var(--amber); }
+.task-meta-item.priority-low::before { background: var(--green); }
+
+.task-progress {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-muted);
+    text-align: right;
+    min-width: 70px;
+}
+.task-progress strong { color: var(--accent); font-size: 14px; }
+
+.task-body { padding: 24px 28px; }
+
+.task-why {
+    background: var(--accent-bg);
+    border-left: 3px solid var(--accent);
+    padding: 14px 18px;
+    margin-bottom: 22px;
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+}
+
+.task-why strong { color: var(--accent); font-family: var(--mono); font-size: 9px; text-transform: uppercase; letter-spacing: 0.15em; display: block; margin-bottom: 4px; }
+
+/* === CHECKLIST === */
+.checklist { list-style: none; }
+
+.checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 11px 0;
+    border-bottom: 1px dashed var(--line-soft);
+    font-size: 14px;
+    line-height: 1.5;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.checklist li:last-child { border-bottom: none; }
+
+.checklist li:hover .checkbox { border-color: var(--accent); }
+
+.checkbox {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    border: 1.5px solid var(--ink-soft);
+    border-radius: 3px;
+    margin-top: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    background: white;
+}
+
+.checkbox::after {
+    content: '';
+    opacity: 0;
+    width: 10px;
+    height: 6px;
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+    transform: rotate(-45deg) translate(1px, -1px);
+    transition: opacity 0.15s;
+}
+
+.checklist li.checked .checkbox {
+    background: var(--accent);
+    border-color: var(--accent);
+}
+
+.checklist li.checked .checkbox::after { opacity: 1; }
+
+.checklist li.checked .check-text { text-decoration: line-through; color: var(--ink-muted); }
+
+.check-text { flex: 1; }
+.check-text small { display: block; font-size: 12px; color: var(--ink-muted); margin-top: 3px; line-height: 1.4; }
+
+/* === DELIVERABLES & RISKS === */
+.task-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line-soft);
+}
+
+.task-grid-block h4 {
+    font-family: var(--mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 12px;
+    color: var(--ink-muted);
+}
+
+.deliverable-list, .risk-list { list-style: none; font-size: 13px; line-height: 1.5; }
+
+.deliverable-list li {
+    padding: 6px 0 6px 18px;
+    position: relative;
+    color: var(--ink-soft);
+}
+
+.deliverable-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--green);
+    font-weight: 600;
+}
+
+.risk-list li {
+    padding: 6px 0 6px 18px;
+    position: relative;
+    color: var(--ink-soft);
+}
+
+.risk-list li::before {
+    content: '!';
+    position: absolute;
+    left: 0;
+    color: var(--red);
+    font-weight: 700;
+    font-family: var(--serif);
+}
+
+/* === TABLES === */
+.table-wrapper {
+    margin: 40px 0;
+    border: 1px solid var(--line);
+    overflow-x: auto;
+    border-radius: 3px;
+    background: var(--bg-card);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+thead { background: var(--bg-dark); color: var(--bg); }
+
+th {
+    padding: 14px 16px;
+    text-align: left;
+    font-family: var(--mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+    border-right: 1px solid #3a3a3a;
+}
+th:last-child { border-right: none; }
+
+td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--line-soft);
+    border-right: 1px solid var(--line-soft);
+    vertical-align: top;
+    line-height: 1.5;
+}
+td:last-child { border-right: none; }
+
+tbody tr:hover { background: var(--bg); }
+
+td strong { color: var(--ink); }
+td.num { font-family: var(--mono); font-feature-settings: "tnum"; text-align: right; }
+td.center { text-align: center; }
+
+.cell-tag {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 2px;
+    font-family: var(--mono);
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+}
+
+.tag-r { background: var(--red-bg); color: var(--red); }
+.tag-a { background: var(--accent-bg); color: var(--accent); }
+.tag-c { background: var(--amber-bg); color: var(--amber); }
+.tag-i { background: var(--green-bg); color: var(--green); }
+
+/* === CALLOUT === */
+.callout {
+    background: var(--bg-card);
+    border-left: 4px solid var(--accent);
+    padding: 24px 28px;
+    margin: 32px 0;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.callout-header {
+    font-family: var(--mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.callout h4 {
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    line-height: 1.25;
+}
+
+.callout p { color: var(--ink-soft); margin-bottom: 8px; }
+.callout p:last-child { margin-bottom: 0; }
+
+.callout.warning { border-left-color: var(--red); }
+.callout.warning .callout-header { color: var(--red); }
+.callout.success { border-left-color: var(--green); }
+.callout.success .callout-header { color: var(--green); }
+
+/* === RACI MATRIX === */
+.raci-grid {
+    display: grid;
+    grid-template-columns: 2fr repeat(3, 1fr);
+    border: 1px solid var(--line);
+    background: var(--bg-card);
+    font-size: 12px;
+    margin: 32px 0;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.raci-grid > div {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--line-soft);
+    border-right: 1px solid var(--line-soft);
+}
+
+.raci-grid > div:nth-child(4n) { border-right: none; }
+
+.raci-header {
+    background: var(--bg-dark);
+    color: var(--bg);
+    font-family: var(--mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-right-color: #3a3a3a !important;
+    border-bottom: none !important;
+}
+
+.raci-cell { text-align: center; }
+
+/* === FOOTER === */
+.footer {
+    margin-top: 100px;
+    padding-top: 40px;
+    border-top: 2px solid var(--ink);
+    font-size: 12px;
+    color: var(--ink-muted);
+    font-family: var(--mono);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-actions { display: flex; gap: 12px; }
+
+.btn-action {
+    padding: 8px 14px;
+    background: transparent;
+    border: 1px solid var(--ink);
+    font-family: var(--mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: var(--ink);
+}
+
+.btn-action:hover { background: var(--ink); color: var(--bg); }
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .layout { grid-template-columns: 1fr; }
+    .sidebar { position: relative; height: auto; border-right: none; border-bottom: 1px solid var(--line); }
+    .main { padding: 40px 32px 80px; }
+    .hero-title { font-size: 48px; }
+    .hero-stats { grid-template-columns: repeat(2, 1fr); }
+    .section-header { grid-template-columns: 60px 1fr; }
+    .section-num { font-size: 48px; }
+    .section-title-block h2 { font-size: 32px; }
+    .section-duration { display: none; }
+    .task-grid { grid-template-columns: 1fr; }
+    .raci-grid { font-size: 11px; grid-template-columns: 1.5fr repeat(3, 1fr); }
+}
+
+/* PRINT */
+@media print {
+    .sidebar, .footer-actions { display: none; }
+    .layout { grid-template-columns: 1fr; }
+    .main { padding: 20px; }
+    .checklist li { break-inside: avoid; }
+    .task-block { break-inside: avoid; border: 1px solid #ccc; }
+}
+</style>
+</head>
+<body>
+
+<div class="layout">
+
+<!-- ========= SIDEBAR ========= -->
+<aside class="sidebar">
+    <div class="sidebar-brand">ZAVÉRA<br><em>Plan de Lanzamiento</em></div>
+    <div class="sidebar-meta">Café Funcional Premium · MX · v1.1</div>
+
+    <div class="sidebar-progress">
+        <div class="sidebar-progress-label">Avance General</div>
+        <div class="sidebar-progress-value" id="overallPct">0</div>
+        <div class="sidebar-progress-bar"><div class="sidebar-progress-fill" id="overallBar"></div></div>
+    </div>
+
+    <div class="nav-section">
+        <div class="nav-section-title">Fundamentos</div>
+        <a href="#exec" class="nav-item">Resumen ejecutivo</a>
+        <a href="#timeline" class="nav-item">Timeline 18 meses</a>
+        <a href="#raci" class="nav-item">Roles de socios</a>
+    </div>
+
+    <div class="nav-section">
+        <div class="nav-section-title">Fases</div>
+        <a href="#fase1" class="nav-item"><span class="nav-item-num">01</span>Definición estratégica</a>
+        <a href="#fase2" class="nav-item"><span class="nav-item-num">02</span>Marca y producto</a>
+        <a href="#fase3" class="nav-item"><span class="nav-item-num">03</span>Validación comercial</a>
+        <a href="#fase4" class="nav-item"><span class="nav-item-num">04</span>Operación y legal</a>
+        <a href="#fase5" class="nav-item"><span class="nav-item-num">05</span>Lanzamiento + influencers</a>
+        <a href="#fase6" class="nav-item"><span class="nav-item-num">06</span>Retail premium → masivo</a>
+    </div>
+
+    <div class="nav-section">
+        <div class="nav-section-title">Anexos</div>
+        <a href="#kpis" class="nav-item">Tablero de KPIs</a>
+        <a href="#capital" class="nav-item">Estructura de capital</a>
+        <a href="#errores" class="nav-item">Errores fatales</a>
+    </div>
+</aside>
+
+<!-- ========= MAIN ========= -->
+<main class="main">
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-eyebrow">ZAVÉRA · Plan de Lanzamiento · Confidencial</div>
+    <h1 class="hero-title">De la fórmula<br>al <em>anaquel</em>.</h1>
+    <p class="hero-lede">Guía operativa para llevar <strong>ZAVÉRA</strong> al mercado mexicano: una bebida funcional de <strong>café premium ready-to-drink</strong> con tres expresiones — Original, Moka Caramel y Vainilla. La estrategia: ocupar el espacio entre el café RTD tradicional y la bebida energética moderna, llegando a retail premium (La Comer, City Market, HEB), HORECA selectiva y e-commerce DTC. <strong>18 meses, seis fases, ejecución con precisión.</strong></p>
+
+    <div class="hero-stats">
+        <div class="hero-stat">
+            <div class="hero-stat-value">$3.5–8<small>M</small></div>
+            <div class="hero-stat-label">Capital mínimo MXN<br>hasta retail moderno</div>
+        </div>
+        <div class="hero-stat">
+            <div class="hero-stat-value">14–18</div>
+            <div class="hero-stat-label">Meses al primer<br>código en cadenas</div>
+        </div>
+        <div class="hero-stat">
+            <div class="hero-stat-value">3</div>
+            <div class="hero-stat-label">Sabores en portafolio<br>(2 al lanzamiento)</div>
+        </div>
+        <div class="hero-stat">
+            <div class="hero-stat-value">~120</div>
+            <div class="hero-stat-label">Tareas críticas<br>accionables</div>
+        </div>
+    </div>
+</section>
+
+<!-- EXEC SUMMARY -->
+<section class="exec-summary" id="exec">
+    <h2>La tesis de <em>ZAVÉRA</em>.</h2>
+    <p>ZAVÉRA no compite contra Monster ni Red Bull. Compite contra <strong>Starbucks Doubleshot, Stok, Andatti Cold Brew, Café Olé y los RTD coffee importados</strong> que dominan el anaquel premium en México. La oportunidad es real: el segmento de café RTD en MX crece &gt;20% anual, está bifurcado entre piso masivo (Café Olé, $25–32, alto azúcar) y techo premium (Starbucks, $40–48, sin azúcar) — y carece de una marca local mexicana con propuesta visual de lujo accesible y café real con agave.</p>
+    <p>El insight comercial central de ZAVÉRA es Grab and Go: una persona con prisa hacia la oficina o saliendo a carretera no se desvía a un supermercado premium. Compra donde es más accesible. La estrategia ganadora es <strong>híbrida en dos olas</strong>: primero construir equity premium en canales selectivos (gas premium, City Market, HEB, cafeterías especialidad) durante 6–9 meses; después, con marca conocida y SKU diseñado para conveniencia, entrar a canal masivo Grab and Go (7-Eleven primero, OXXO/Walmart después) sin canibalizar el premium.</p>
+    <p>El error a evitar: <strong>lanzar primero en OXXO sin awareness</strong>. Andatti Cold Brew vende ~30% de los cafés diarios de OXXO (con 23,000 tiendas). Ganar ese pelea de frente sin marca consolidada es perder.</p>
+
+    <div class="exec-summary-grid">
+        <div>
+            <div class="exec-pillar-num">01</div>
+            <div class="exec-pillar-title">Categoría correcta</div>
+            <div class="exec-pillar-desc">ZAVÉRA es café RTD funcional premium, no bebida energética. Anaquel, precio y comunicación deben respetar esa categoría.</div>
+        </div>
+        <div>
+            <div class="exec-pillar-num">02</div>
+            <div class="exec-pillar-title">Premium primero, masivo después</div>
+            <div class="exec-pillar-desc">9 meses construyendo equity en canales selectivos antes de entrar a 7-Eleven. OXXO viene en mes 14+.</div>
+        </div>
+        <div>
+            <div class="exec-pillar-num">03</div>
+            <div class="exec-pillar-title">SKU dual para conveniencia</div>
+            <div class="exec-pillar-desc">Lata 355ml premium ($42) para retail y especialidad. Lata 250ml ($32) para conveniencia masiva sin canibalizar.</div>
+        </div>
+    </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="timeline-container" id="timeline">
+    <div class="section-header">
+        <div class="section-num"><em>00</em></div>
+        <div class="section-title-block">
+            <div class="section-eyebrow">Vista general</div>
+            <h2>Mapa de 18 meses</h2>
+        </div>
+    </div>
+
+    <div class="timeline-wrapper">
+        <div class="timeline-month-col">M1–M2</div>
+        <div class="timeline-row">
+            <span class="timeline-phase-tag tag-f1">Fase 1</span>
+            <div class="timeline-row-content"><strong>Definición estratégica</strong>Pacto entre socios, tesis de mercado, modelo de negocio, capital semilla</div>
+        </div>
+
+        <div class="timeline-month-col">M3–M5</div>
+        <div class="timeline-row">
+            <span class="timeline-phase-tag tag-f2">Fase 2</span>
+            <div class="timeline-row-content"><strong>Marca y producto</strong>Naming, identidad, empaque, fórmula final, primera corrida piloto</div>
+        </div>
+
+        <div class="timeline-month-col">M5–M8</div>
+        <div class="timeline-row">
+            <span class="timeline-phase-tag tag-f3">Fase 3</span>
+            <div class="timeline-row-content"><strong>Validación comercial</strong>Catas, focus groups, pre-venta, primeros 20–50 puntos de venta</div>
+        </div>
+
+        <div class="timeline-month-col">M6–M9</div>
+        <div class="timeline-row">
+            <span class="timeline-phase-tag tag-f4">Fase 4</span>
+            <div class="timeline-row-content"><strong>Operación y legal</strong>COFEPRIS, marca registrada, contratos, ERP, logística, etiquetado NOM-051</div>
+        </div>
+
+        <div class="timeline-month-col">M9–M12</div>
+        <div class="timeline-row">
+            <span class="timeline-phase-tag tag-f5">Fase 5</span>
+            <div class="timeline-row-content"><strong>Lanzamiento + influencers</strong>Campaña de marca, expansión a 100+ PDV, influencer marketing escalado, e-commerce, HORECA</div>
+        </div>
+
+        <div class="timeline-month-col">M9–M14</div>
+        <div class="timeline-row">
+            <span class="timeline-phase-tag tag-f6">Fase 6a</span>
+            <div class="timeline-row-content"><strong>Retail premium + 7-Eleven</strong>La Comer, City Market, HEB, Chedraui Selecto, y proceso paralelo con 7-Eleven (más ágil que OXXO)</div>
+        </div>
+
+        <div class="timeline-month-col">M14–M24</div>
+        <div class="timeline-row">
+            <span class="timeline-phase-tag tag-f6">Fase 6b</span>
+            <div class="timeline-row-content"><strong>Conveniencia masiva</strong>OXXO, Walmart, Soriana — con tracción demostrada y SKU 250ml para canal Grab and Go</div>
+        </div>
+    </div>
+</section>
+
+<!-- RACI MATRIX -->
+<section class="section" id="raci">
+    <div class="section-header">
+        <div class="section-num"><em>00</em></div>
+        <div class="section-title-block">
+            <div class="section-eyebrow">Estructura</div>
+            <h2>Roles entre socios</h2>
+        </div>
+        <div class="section-duration"><strong>Definir M1</strong>Antes de invertir capital</div>
+    </div>
+
+    <p class="section-intro">La causa de muerte #1 de startups con 3 fundadores no es el mercado: es la falta de claridad en quién decide qué. Asignen roles formales <strong>antes</strong> de gastar el primer peso. Esta matriz simplificada (3 socios) es un punto de partida — ajústenla según el perfil real de cada uno.</p>
+
+    <div class="raci-grid">
+        <div class="raci-header">Función</div>
+        <div class="raci-header raci-cell">Socio A (CEO)</div>
+        <div class="raci-header raci-cell">Socio B (COO/Producto)</div>
+        <div class="raci-header raci-cell">Socio C (CMO/Ventas)</div>
+
+        <div><strong>Estrategia y finanzas</strong></div>
+        <div class="raci-cell"><span class="cell-tag tag-r">Lidera</span></div>
+        <div class="raci-cell"><span class="cell-tag tag-c">Consultado</span></div>
+        <div class="raci-cell"><span class="cell-tag tag-c">Consultado</span></div>
+
+        <div><strong>Producto y maquila</strong></div>
+        <div class="raci-cell"><span class="cell-tag tag-i">Informado</span></div>
+        <div class="raci-cell"><span class="cell-tag tag-r">Lidera</span></div>
+        <div class="raci-cell"><span class="cell-tag tag-c">Consultado</span></div>
+
+        <div><strong>Branding y marketing</strong></div>
+        <div class="raci-cell"><span class="cell-tag tag-c">Consultado</span></div>
+        <div class="raci-cell"><span class="cell-tag tag-i">Informado</span></div>
+        <div class="raci-cell"><span class="cell-tag tag-r">Lidera</span></div>
+
+        <div><strong>Ventas y distribución</strong></div>
+        <div class="raci-cell"><span class="cell-tag tag-a">Aprueba</span></div>
+        <div class="raci-cell"><span class="cell-tag tag-c">Consultado</span></div>
+        <div class="raci-cell"><span class="cell-tag tag-r">Lidera</span></div>
+
+        <div><strong>Legal y regulatorio</strong></div>
+        <div class="raci-cell"><span class="cell-tag tag-r">Lidera</span></div>
+        <div class="raci-cell"><span class="cell-tag tag-c">Consultado</span></div>
+        <div class="raci-cell"><span class="cell-tag tag-i">Informado</span></div>
+
+        <div><strong>Operaciones y logística</strong></div>
+        <div class="raci-cell"><span class="cell-tag tag-i">Informado</span></div>
+        <div class="raci-cell"><span class="cell-tag tag-r">Lidera</span></div>
+        <div class="raci-cell"><span class="cell-tag tag-c">Consultado</span></div>
+
+        <div><strong>Fundraising / inversionistas</strong></div>
+        <div class="raci-cell"><span class="cell-tag tag-r">Lidera</span></div>
+        <div class="raci-cell"><span class="cell-tag tag-c">Consultado</span></div>
+        <div class="raci-cell"><span class="cell-tag tag-c">Consultado</span></div>
+    </div>
+
+    <div class="callout warning">
+        <div class="callout-header">⚠ Formalicen el reparto accionario desde el día 1</div>
+        <h4>Equity split: definirlo con estructura, no de palabra</h4>
+        <p>Cualquier distribución que acuerden funciona si está respaldada por las cláusulas correctas: <strong>vesting de 4 años con cliff de 1 año</strong>, derecho de tag-along/drag-along, protocolo claro de salida (buyout valuation method) y mecanismo de desempate en decisiones operativas. Hagan esto con un abogado corporativo desde el día 1, no después.</p>
+    </div>
+</section>
+
+
+<!-- ========= FASE 1 ========= -->
+<section class="section" id="fase1">
+    <div class="section-header">
+        <div class="section-num"><em>01</em></div>
+        <div class="section-title-block">
+            <div class="section-eyebrow">Fase uno · Corto plazo</div>
+            <h2>Definición estratégica</h2>
+        </div>
+        <div class="section-duration"><strong>Mes 1 — Mes 2</strong>~ 8 semanas</div>
+    </div>
+
+    <p class="section-intro">ZAVÉRA ya tiene fórmula avanzada, identidad visual madura y portafolio de 3 sabores definido. Lo que falta — y es crítico — es la <strong>arquitectura de socios, financiera y de mercado</strong>. Esta fase no es opcional aunque ya tengan producto: sin pacto formal entre socios, modelo financiero realista y posicionamiento competitivo aterrizado, todo lo demás se construye sobre arena.</p>
+
+    <!-- TASK 1.1 -->
+    <div class="task-block">
+        <div class="task-header">
+            <div class="task-header-left">
+                <h3>1.1 — Pacto entre socios y constitución legal</h3>
+                <div class="task-meta">
+                    <span class="task-meta-item priority-high">Prioridad alta</span>
+                    <span class="task-meta-item">Semana 1–3</span>
+                    <span class="task-meta-item">Owner: CEO + abogado</span>
+                </div>
+            </div>
+            <div class="task-progress" data-task="1.1"><strong>0/6</strong> tareas</div>
+        </div>
+        <div class="task-body">
+            <div class="task-why">
+                <strong>Por qué importa</strong>
+                Sin un convenio claro, cualquier desacuerdo (y vendrán) puede destruir el negocio. Las muertes prematuras de startups mexicanas se concentran aquí: socios que se separan sin protocolos, sin vesting, sin valuación.
+            </div>
+
+            <ul class="checklist" data-section="1.1">
+                <li><div class="checkbox"></div><div class="check-text">Constituir <strong>S.A.P.I. de C.V.</strong> (no S.A. ni S. de R.L.) — la SAPI permite acciones diferenciadas, vesting y rondas futuras de inversión <small>Costo: $15,000–$30,000 MXN con notario y abogado corporativo</small></div></li>
+                <li><div class="checkbox"></div><div class="check-text">Firmar <strong>convenio entre accionistas</strong> con cláusulas de vesting (4 años, cliff de 1), tag-along, drag-along, derecho de primera oferta y protocolo de buyout</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Definir <strong>equity split inicial</strong> basado en el aporte real de cada socio: tiempo dedicado, capital invertido, expertise y red de contactos. Documentarlo con un abogado, no de palabra <small>Frameworks útiles: Slicing Pie de Mike Moyer, o método Foundr</small></div></li>
+                <li><div class="checkbox"></div><div class="check-text">Reservar <strong>10–15% en stock pool</strong> para futuros key hires (head of sales, food scientist, etc.)</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Abrir <strong>cuenta bancaria empresarial</strong> (BBVA Empresas, Banorte Empresarial o Mercado Pago Business). Definir firmas mancomunadas para montos &gt; $100K MXN</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Inscripción en <strong>SAT, IMSS, INFONAVIT</strong> (aún sin nómina, deja todo listo). Contratar contador desde el día 1, no improvisen con Excel</div></li>
+            </ul>
+
+            <div class="task-grid">
+                <div class="task-grid-block">
+                    <h4>Entregables</h4>
+                    <ul class="deliverable-list">
+                        <li>Acta constitutiva firmada y protocolizada</li>
+                        <li>Convenio entre accionistas firmado</li>
+                        <li>Cap table inicial documentado</li>
+                        <li>RFC, e.firma, cuenta bancaria activa</li>
+                    </ul>
+                </div>
+                <div class="task-grid-block">
+                    <h4>Riesgos comunes</h4>
+                    <ul class="risk-list">
+                        <li>Constituir como persona física: bloquea inversión futura</li>
+                        <li>Equity sin vesting: si un socio se va al mes 6, se lleva su parte sin haber completado su aporte</li>
+                        <li>Acuerdos verbales: en México "los amigos no necesitan papeles" cuesta caro</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TASK 1.2 -->
+    <div class="task-block">
+        <div class="task-header">
+            <div class="task-header-left">
+                <h3>1.2 — Investigación de mercado y posicionamiento</h3>
+                <div class="task-meta">
+                    <span class="task-meta-item priority-high">Prioridad alta</span>
+                    <span class="task-meta-item">Semana 2–6</span>
+                    <span class="task-meta-item">Owner: CEO + CMO</span>
+                </div>
+            </div>
+            <div class="task-progress" data-task="1.2"><strong>0/7</strong> tareas</div>
+        </div>
+        <div class="task-body">
+            <div class="task-why">
+                <strong>Por qué importa</strong>
+                ZAVÉRA está en una categoría híbrida ("café funcional premium RTD") que NO es bebida energética. Confundir la categoría destruye el posicionamiento, mete a la marca al anaquel equivocado y la hace competir contra los precios bajos de Monster Zero en lugar de los precios premium de Starbucks Doubleshot.
+            </div>
+
+            <ul class="checklist" data-section="1.2">
+                <li><div class="checkbox"></div><div class="check-text">Mapeo competitivo en MX de la categoría real: <strong>Starbucks Doubleshot, Stok, Caffè Latte de Nescafé, La Colombe, Chameleon, High Brew, Wandering Bear, Monster Espresso</strong>. Comprar uno de cada, fotografiar empaque, comparar etiqueta, precio, posicionamiento, canal <small>Salida: matriz competitiva con 15+ atributos. Ojo: NO incluir Red Bull/Monster regulares — son otra categoría</small></div></li>
+                <li><div class="checkbox"></div><div class="check-text">Estudio de tamaño de mercado: <strong>café RTD en MX</strong> (~$2,500–3,500 MDP anuales, creciendo &gt;20%). Fuentes: Euromonitor, Nielsen, ANPRAC, AMECAFE</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Definir <strong>buyer persona principal</strong>. Hipótesis inicial alineada al brief de Zavera: "Profesional 28–45, NSE A/B/C+, CDMX/MTY/GDL/QRO, consume café diariamente, valora estética y experiencia, compra en City Market o cafeterías de especialidad, usa el café como ritual no como combustible"</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Validar el <strong>"job to be done"</strong> de ZAVÉRA. Hipótesis: <em>reemplazo del café de la mañana fuera de casa, o del café de media tarde de oficina</em>. Esta decisión define formato (355ml ok, 200ml premium también funciona), precio ($38–55) y comunicación</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Decidir <strong>posicionamiento</strong> en 1 frase. Borrador desde el brief: "Para profesionales que valoran ritual y elegancia en su café diario, ZAVÉRA es café funcional premium ready-to-drink que entrega energía limpia y experiencia sensorial superior, a diferencia de Starbucks Doubleshot que sabe industrial o de Monster que sabe a química"</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Hacer <strong>30+ entrevistas cualitativas</strong> con el buyer persona en el contexto correcto: cafeterías de especialidad, oficinas premium, supermercados premium. NO en gimnasios. Pregunta clave: "¿Qué tomas a media tarde para mantener energía?" — escuchen patrones <small>NO validar con familia, amigos ni en círculos cercanos</small></div></li>
+                <li><div class="checkbox"></div><div class="check-text">Documentar <strong>Brief Estratégico</strong> de 10–15 páginas integrando el material existente de ZAVÉRA: mercado RTD coffee, target, posicionamiento, propuesta de valor, oportunidad. Esta es la biblia interna que se entrega a inversionistas y al equipo</div></li>
+            </ul>
+
+            <div class="task-grid">
+                <div class="task-grid-block">
+                    <h4>Entregables</h4>
+                    <ul class="deliverable-list">
+                        <li>Matriz competitiva (Excel + fotos de empaque)</li>
+                        <li>Buyer persona documentado (1 página)</li>
+                        <li>Brief estratégico (15 pp)</li>
+                        <li>Statement de posicionamiento (1 frase)</li>
+                    </ul>
+                </div>
+                <div class="task-grid-block">
+                    <h4>Riesgos comunes</h4>
+                    <ul class="risk-list">
+                        <li>Sesgo del fundador: "yo lo tomaría" no es validación</li>
+                        <li>Querer ser todo para todos: pierden filo</li>
+                        <li>Confundir feature (sin azúcar) con posicionamiento</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TASK 1.3 -->
+    <div class="task-block">
+        <div class="task-header">
+            <div class="task-header-left">
+                <h3>1.3 — Modelo financiero y plan de capital</h3>
+                <div class="task-meta">
+                    <span class="task-meta-item priority-high">Prioridad alta</span>
+                    <span class="task-meta-item">Semana 4–8</span>
+                    <span class="task-meta-item">Owner: CEO</span>
+                </div>
+            </div>
+            <div class="task-progress" data-task="1.3"><strong>0/6</strong> tareas</div>
+        </div>
+        <div class="task-body">
+            <div class="task-why">
+                <strong>Por qué importa</strong>
+                Lanzar una bebida funcional en MX hasta llegar a anaquel cuesta entre $3.5M y $8M MXN. No saber esto antes de empezar es la receta para quedarse sin combustible al mes 9 — exactamente cuando empieza a haber tracción y se necesita acelerar.
+            </div>
+
+            <ul class="checklist" data-section="1.3">
+                <li><div class="checkbox"></div><div class="check-text">Construir <strong>P&L proyectado a 36 meses</strong> con escenarios conservador, base y agresivo. Modelo en Excel/Sheets con sensibilidades</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Calcular <strong>unit economics</strong>: costo de bote, margen bruto por canal (DTC ~60%, mayoreo ~35%, retail moderno ~22% después de promos y devoluciones)</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Definir <strong>capital required</strong>: pre-seed para llegar a M9 (~$1.5M MXN), seed para M9–M18 (~$4–6M MXN). Sumen 30% de buffer</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Decidir <strong>fuente de capital</strong>: bootstrap, F&F, ángeles (típico ticket $250K–$1M), VC (no aplica todavía), deuda (NAFIN, FIRA, financiamiento de proveedores)</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Construir <strong>cap table modelable</strong> con espacios para 2–3 rondas futuras. Si planean levantar de VC en 24 meses, no diluyan más del 20% en pre-seed</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Identificar <strong>break-even point</strong> en unidades vendidas/mes. Para ZAVÉRA con CMV $11–14 (café real es más caro que un energético) y precio retail premium $42, suelen ser 50–80K latas/mes</div></li>
+            </ul>
+
+            <div class="task-grid">
+                <div class="task-grid-block">
+                    <h4>Entregables</h4>
+                    <ul class="deliverable-list">
+                        <li>Modelo financiero a 36 meses (3 escenarios)</li>
+                        <li>Documento de capital required y plan de funding</li>
+                        <li>Unit economics por canal</li>
+                        <li>Cap table proyectado a 24m</li>
+                    </ul>
+                </div>
+                <div class="task-grid-block">
+                    <h4>Riesgos comunes</h4>
+                    <ul class="risk-list">
+                        <li>Subestimar costos de marketing (suelen ser 25–35% en año 1)</li>
+                        <li>Olvidar capital de trabajo: inventario inmoviliza efectivo</li>
+                        <li>No considerar devoluciones, mermas, descuentos comerciales</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TASK 1.4 -->
+    <div class="task-block">
+        <div class="task-header">
+            <div class="task-header-left">
+                <h3>1.4 — Landing page de validación</h3>
+                <div class="task-meta">
+                    <span class="task-meta-item priority-high">Prioridad alta</span>
+                    <span class="task-meta-item">Semana 3–4</span>
+                    <span class="task-meta-item">Owner: CMO + CEO</span>
+                </div>
+            </div>
+            <div class="task-progress" data-task="1.4"><strong>0/7</strong> tareas</div>
+        </div>
+        <div class="task-body">
+            <div class="task-why">
+                <strong>Por qué importa</strong>
+                La landing de validación es el instrumento más barato para medir demanda real antes de invertir capital. No esperar a tener marca terminada ni producto listo — lanzar fea y rápido, iterar después. Una página con concepto + formulario de espera en semana 4 vale más que cualquier focus group: mide con dinero y atención real, no con intenciones declaradas. Meta: <strong>300 emails en 60 días sin gastar en ads</strong>. Si no se llega, hay un problema de mensaje o target que conviene descubrir ahora y no al mes 9.
+            </div>
+
+            <ul class="checklist" data-section="1.4">
+                <li><div class="checkbox"></div><div class="check-text"><strong>Lanzar landing V1 en semana 3–4</strong> con concepto crudo: propuesta de valor en 1 frase, imagen de referencia o mood-board, formulario de "quiero ser el primero en probar ZAVÉRA". Herramientas recomendadas: Framer (más rápido), Webflow, o Carrd para MVP de 1 día. Costo: $0–$500 MXN/mes</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Escribir <strong>copy de validación</strong>: no describir el producto, describir el problema que resuelve. Ejemplo: "¿Cansado de Red Bull pero el café te pone ansioso? Hay algo nuevo." El copy debe polarizar — si no molesta a nadie, no conecta con nadie</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Conectar <strong>herramienta de email capture</strong>: Mailchimp (gratis hasta 500 contactos), Klaviyo (mejor para e-commerce futuro), o simplemente Google Sheets vía Typeform. Capturar: nombre, email, ciudad, y una pregunta de segmentación ("¿qué tomas hoy en la mañana?")</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Distribuir en <strong>red personal de los 3 socios</strong>: LinkedIn, WhatsApp, Instagram personal. Sin ads. Si la red personal no genera 50 emails en la primera semana, el mensaje falla — no la audiencia. <small>Meta semana 1: 50 emails. Meta mes 1: 150. Meta mes 2: 300.</small></div></li>
+                <li><div class="checkbox"></div><div class="check-text"><strong>Actualizar a landing V2</strong> cuando esté lista la identidad visual de ZAVÉRA (Fase 2, mes 3–4): diseño con marca real, renders de lata Original + Moka Caramel, copy pulido. Esta versión acompaña el seeding a influencers y los primeros eventos de sampling</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Evaluar <strong>pre-venta o waitlist activa en V2</strong> (opcional pero poderoso): "Pre-ordena tu primer 6-pack de ZAVÉRA con 20% de descuento, envío en [mes de lanzamiento]". Dinero real comprometido = validación máxima + munición para inversionistas</div></li>
+                <li><div class="checkbox"></div><div class="check-text"><strong>Migrar a DTC funcional completo (V3) en Fase 5</strong> (mes 9, lanzamiento oficial): Shopify + pasarela de pago (Conekta, Stripe MX, Mercado Pago). La lista de emails acumulada durante Fases 1–4 es el primer activo de marketing del lanzamiento de ZAVÉRA</div></li>
+            </ul>
+
+            <div class="callout warning">
+                <div class="callout-header">⚠ Error común</div>
+                <h4>Esperar a tener todo perfecto para lanzar</h4>
+                <p>El error clásico es esperar a tener la identidad de ZAVÉRA terminada, foto profesional de lata y copy impecable antes de publicar la landing. Eso son meses 4–5. Para entonces ya se perdió el período más valioso de escucha y construcción de lista. <strong>Lanzar fea, lanzar rápido, iterar.</strong> La perfección llega en V2.</p>
+            </div>
+
+            <div class="task-grid">
+                <div class="task-grid-block">
+                    <h4>Entregables</h4>
+                    <ul class="deliverable-list">
+                        <li>Landing V1 publicada (semana 4)</li>
+                        <li>Lista de emails con 300+ contactos (mes 2)</li>
+                        <li>Landing V2 con identidad ZAVÉRA (mes 4)</li>
+                        <li>DTC funcional V3 en Shopify (mes 9)</li>
+                    </ul>
+                </div>
+                <div class="task-grid-block">
+                    <h4>Métricas de validación</h4>
+                    <ul class="risk-list">
+                        <li>300 emails en 60 días sin ads = mensaje funciona</li>
+                        <li>Tasa de conversión landing → email &gt; 25%</li>
+                        <li>Si pre-venta: mínimo 50 pre-órdenes antes de lanzar</li>
+                        <li>Ciudad predominante en lista = primer mercado objetivo</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+<!-- ========= FASE 2 ========= -->
+<section class="section" id="fase2">
+    <div class="section-header">
+        <div class="section-num"><em>02</em></div>
+        <div class="section-title-block">
+            <div class="section-eyebrow">Fase dos · Corto plazo</div>
+            <h2>Marca y producto</h2>
+        </div>
+        <div class="section-duration"><strong>Mes 3 — Mes 5</strong>~ 12 semanas</div>
+    </div>
+
+    <p class="section-intro">ZAVÉRA tiene marca, identidad visual y portafolio definidos. Esta fase cambia de enfoque: no es <em>crear</em> sino <strong>blindar legalmente, validar técnicamente y aterrizar para producción</strong>. Naming → registro IMPI; identidad → arte final para imprenta; fórmula → análisis nutrimental oficial y vida de anaquel.</p>
+
+    <!-- TASK 2.1 -->
+    <div class="task-block">
+        <div class="task-header">
+            <div class="task-header-left">
+                <h3>2.1 — Blindaje legal del nombre ZAVÉRA</h3>
+                <div class="task-meta">
+                    <span class="task-meta-item priority-high">Prioridad alta</span>
+                    <span class="task-meta-item">Inmediato — Semana 1–4</span>
+                    <span class="task-meta-item">Owner: CEO + abogado IP</span>
+                </div>
+            </div>
+            <div class="task-progress" data-task="2.1"><strong>0/7</strong> tareas</div>
+        </div>
+        <div class="task-body">
+            <div class="task-why">
+                <strong>Por qué importa</strong>
+                ZAVÉRA es un nombre con personalidad y diferenciación clara. Pero hasta no estar registrado en IMPI, cualquiera puede oponerse o registrarlo primero. Cada semana sin solicitud presentada es riesgo. Y hay particularidades a resolver: el acento agudo en É, las clases de registro correctas, y la disponibilidad de dominios.
+            </div>
+
+            <ul class="checklist" data-section="2.1">
+                <li><div class="checkbox"></div><div class="check-text">Búsqueda exhaustiva en <strong>IMPI MARCAnet</strong> (gratuito) de "ZAVÉRA", "ZAVERA", "SAVERA", "ZAVERRA" y variantes fonéticas/ortográficas en clases <strong>30 (café), 32 (bebidas no alcohólicas) y 35 (comercialización)</strong>. Cualquier marca similar registrada antes = bloqueo o riesgo de oposición</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Validar disponibilidad de dominios: <strong>zavera.com, zavera.mx, zavera.com.mx, drinkzavera.com</strong>. El acento É no funciona en URLs — el dominio comercial debe ser sin acento. Comprar todos antes de cualquier paso público</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Asegurar handles en redes: <strong>@zavera, @drinkzavera, @zaveramx</strong> en Instagram, TikTok, LinkedIn, X. Hacerlo HOY aunque no se publique nada todavía</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Registrar marca en <strong>IMPI</strong> en <strong>clase 30</strong> (café preparado, bebidas a base de café) — la principal para ZAVÉRA dado que es café RTD, no energético — y también <strong>clase 32</strong> (bebidas no alcohólicas) y <strong>clase 35</strong> (comercialización). Costo: ~$3,500 MXN por clase + abogado IP. Tiempo: 8–12 meses</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Registrar también <strong>el logotipo</strong> (la composición tipográfica de ZAVÉRA en serif elegante) como marca mixta. Sin esto, alguien podría copiar el diseño aunque no copie el nombre</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Considerar <strong>registro internacional vía Madrid Protocol</strong> si planean exportar a EUA/Europa en 24 meses. Hacerlo desde el inicio es más barato que arreglarlo después</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Validar con asesor regulatorio si <strong>"Café Funcional Premium"</strong> (descriptor que aparece en el empaque actual) tiene alguna restricción bajo COFEPRIS. La palabra "funcional" puede activar requisitos de respaldo científico</div></li>
+            </ul>
+
+            <div class="callout warning">
+                <div class="callout-header">⚠ Advertencia regulatoria — Claims funcionales</div>
+                <h4>"Energía limpia y enfoque" requiere validación COFEPRIS antes de imprenta</h4>
+                <p>El brief de ZAVÉRA usa "energía limpia y enfoque" como descriptor consistente en las 3 latas. Esa frase puede ser interpretada por COFEPRIS como <strong>declaración de propiedades funcionales no respaldada</strong> bajo el Reglamento de Control Sanitario de Productos y Servicios. Validar con asesor regulatorio si es defendible (probablemente sí, dada su forma genérica) o si conviene reformularla a algo descriptivo como "café real con cafeína natural" o "para tu momento de calma" (esto último ya lo usan en Vainilla y es más seguro). <strong>Esta validación tiene que pasar ANTES de mandar el arte final a imprenta.</strong></p>
+            </div>
+
+            <div class="task-grid">
+                <div class="task-grid-block">
+                    <h4>Entregables</h4>
+                    <ul class="deliverable-list">
+                        <li>Solicitud de registro IMPI en clases 30, 32 y 35 (folios)</li>
+                        <li>Registro de marca mixta (logo + denominativa)</li>
+                        <li>Dominios y handles asegurados</li>
+                        <li>Validación regulatoria de claims en empaque</li>
+                    </ul>
+                </div>
+                <div class="task-grid-block">
+                    <h4>Riesgos comunes</h4>
+                    <ul class="risk-list">
+                        <li>Asumir que ZAVÉRA está libre sin búsqueda IMPI formal</li>
+                        <li>Registrar solo clase 32 (energéticas) y omitir clase 30 (café)</li>
+                        <li>Imprimir empaque con claims funcionales sin validación</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TASK 2.2 -->
+    <div class="task-block">
+        <div class="task-header">
+            <div class="task-header-left">
+                <h3>2.2 — Aterrizaje del diseño a producción</h3>
+                <div class="task-meta">
+                    <span class="task-meta-item priority-high">Prioridad alta</span>
+                    <span class="task-meta-item">Semana 1–8</span>
+                    <span class="task-meta-item">Owner: CMO + studio + maquila</span>
+                </div>
+            </div>
+            <div class="task-progress" data-task="2.2"><strong>0/7</strong> tareas</div>
+        </div>
+        <div class="task-body">
+            <div class="task-why">
+                <strong>Por qué importa</strong>
+                ZAVÉRA tiene un sistema visual fuerte (negro mate + dorado, serif elegante, propuesta editorial). El reto es que ese diseño <strong>sobreviva la transición de mockup a impresión real en lata aluminio</strong>. El proceso técnico (dieline, sangrado, tintas Pantone, área segura, zona de unión) puede destruir un diseño elegante si no se cuida.
+            </div>
+
+            <ul class="checklist" data-section="2.2">
+                <li><div class="checkbox"></div><div class="check-text">Validar el diseño actual con <strong>shelf test real</strong>: imprimir mockup tamaño real (lata vinilo o impresión digital sobre lata blanca) y ponerla en un anaquel de City Market entre Starbucks Doubleshot, Stok y otros RTD. Observar si destaca, si la gente la voltea a ver, si se lee a 1.5 metros</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Confirmar que el <strong>negro mate</strong> es replicable en lata aluminio. El acabado mate sobre aluminio requiere <strong>varnish mate específico</strong> (Crown Holdings, Ball Corporation lo manejan, pero hay que pedirlo expresamente). Sin esto el negro queda brillante y pierde toda la elegancia del concept</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Definir <strong>color dorado en Pantone Metálico</strong>. El brief menciona PANTONE 10140 TCX (Chocolate Drizzle) para Moka Caramel y PANTONE 458 U para Vainilla. Para el dorado de la lata Original, considerar <strong>Pantone 871C o 872C metálicos</strong> — los dorados normales sobre lata se ven amarillo plano</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Cumplimiento NOM-051 incorporado al diseño <strong>ANTES</strong> de arte final: tabla nutrimental, declaración de alérgenos, leyenda obligatoria de cafeína, octágonos si aplican, datos del responsable. Trabajar con asesor regulatorio para definir qué octágonos pueden activarse <small>Riesgo concreto: edulcorantes pueden activar octágono "contiene edulcorantes, no recomendable en niños"</small></div></li>
+                <li><div class="checkbox"></div><div class="check-text">Recibir del maquilador el <strong>dieline oficial de la lata 355ml</strong> con áreas seguras, zona de unión, sangrados. Adaptar el diseño actual a esa retícula técnica</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Generar <strong>brand book de 30+ páginas</strong>: usos correctos del logo, paleta extendida, tipografía secundaria, tone of voice (siguiendo el ADN definido en el brief: premium · funcional · elegante · antojable · contemporánea), templates para Instagram/TikTok/trade marketing/e-commerce</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Producir <strong>fotografía de producto profesional</strong>: 3 latas individuales fondo blanco/transparente, lifestyle (oficina, café de especialidad, mañana), composición editorial. ~$80K–$200K MXN. Esta inversión paga 5x en e-commerce y trade marketing</div></li>
+            </ul>
+
+            <div class="task-grid">
+                <div class="task-grid-block">
+                    <h4>Entregables</h4>
+                    <ul class="deliverable-list">
+                        <li>Arte final CMYK adaptado a dieline real</li>
+                        <li>Validación NOM-051 firmada por asesor</li>
+                        <li>Brand book completo</li>
+                        <li>Banco de fotografía profesional (50+ tomas)</li>
+                    </ul>
+                </div>
+                <div class="task-grid-block">
+                    <h4>Riesgos comunes</h4>
+                    <ul class="risk-list">
+                        <li>Aprobar arte final sin shelf test real en categoría correcta</li>
+                        <li>Diseñar etiqueta y luego "meter" NOM-051: rediseño caro</li>
+                        <li>Negro brillante en lugar de mate: pierde percepción premium</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TASK 2.3 -->
+    <div class="task-block">
+        <div class="task-header">
+            <div class="task-header-left">
+                <h3>2.3 — Cierre de fórmula, validación técnica y portafolio</h3>
+                <div class="task-meta">
+                    <span class="task-meta-item priority-high">Prioridad alta</span>
+                    <span class="task-meta-item">Semana 1–10</span>
+                    <span class="task-meta-item">Owner: COO + food scientist</span>
+                </div>
+            </div>
+            <div class="task-progress" data-task="2.3"><strong>0/9</strong> tareas</div>
+        </div>
+        <div class="task-body">
+            <div class="task-why">
+                <strong>Por qué importa</strong>
+                ZAVÉRA tiene fórmula avanzada (café real + agave + cafeína natural + perfil redondo/umami) en 3 sabores. Lo que falta es el cierre técnico: nivel exacto de cafeína, vida de anaquel comprobada, análisis nutrimental oficial, decisión de proceso (UHT vs retort), y la decisión comercial sobre lanzar 2 vs 3 sabores.
+            </div>
+
+            <ul class="checklist" data-section="2.3">
+                <li><div class="checkbox"></div><div class="check-text">Definir <strong>contenido exacto de cafeína por lata 355ml</strong>. El brief no lo especifica todavía. Para café RTD premium el rango competitivo es <strong>120–200mg de cafeína/lata</strong> (Starbucks Doubleshot tiene ~135mg, La Colombe Triple ~175mg). NOM-218 permite hasta ~115mg/100ml en bebidas saborizadas con cafeína. Validar con regulatorio</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Decidir <strong>proceso de manufactura</strong>: <strong>UHT aseptic</strong> (mejor para sabor café, vida 9–12 meses, inversión más alta de maquila) vs <strong>retort/esterilizado</strong> (más estable, vida 12–18 meses, sabor más cocido). Para café premium, UHT aseptic es el estándar de calidad</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Validar <strong>perfil sensorial final</strong> con cata profesional (Q-grader certificado): suavidad inicial, cuerpo medio-alto, dulzura controlada por agave, final limpio. Documentar el perfil de cada sabor para replicabilidad por la maquila</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Decisión comercial crítica: <strong>¿lanzar con 2 o 3 sabores?</strong> Recomendación basada en el brief: <strong>Original + Vainilla al lanzamiento, Moka Caramel en mes 6 como wildcard</strong>. Razón: Vainilla = amplitud comercial (sabor más universal en café); Original = identidad de marca; Moka Caramel = riesgo de percepción "muy dulce/postre" — mejor validarlo después con tracción ya construida</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Estudio de <strong>vida de anaquel acelerado</strong> (12 meses comprobados) en laboratorio certificado: análisis sensorial, microbiológico, fisicoquímico cada 30/60/90 días simulando 12 meses. Costo: $40K–$80K MXN por sabor. Indispensable para retail moderno</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Estudio nutrimental oficial para etiquetado <strong>NOM-051 + NOM-218</strong> en laboratorio acreditado por EMA (CENIAQ, Eurofins México, AGQ Labs). Costo $15K–$30K MXN por sabor</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Definir <strong>código de barras GS1 México</strong> (uno por SKU/sabor). Membresía anual ~$5,500 MXN + cuota por SKU. Sin esto no entran a retail moderno</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Diseñar <strong>secundario y terciario</strong>: 4-pack premium (target retail premium y HORECA), 12-pack (e-commerce y mayoreo), master case. Cartón impreso negro/dorado consistente con la lata — el unboxing importa en DTC</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Sourcing de <strong>latas, tapas, cartón</strong>: para acabado mate negro + dorado metálico, validar capacidades de Crown Mexico, Ball Corporation, Envases Universales. MOQs típicos para acabados especiales: 30K–60K latas por pedido por SKU</div></li>
+            </ul>
+
+            <div class="callout">
+                <div class="callout-header">Tabla de referencia · costos para café RTD premium</div>
+                <h4>Costo aproximado por lata ZAVÉRA 355ml</h4>
+                <p>Lata aluminio impresa con varnish mate + dorado metálico: $5.50–7.50 (más cara que energética por acabados especiales) · Tapa: $0.30 · Líquido (café real, agave, cafeína natural, saborizantes naturales): $3.50–5.00 (café cuesta más que sabores químicos) · Maquila UHT aseptic: $1.80–2.80 · Empaque secundario premium: $0.60–1.00 · <strong>CMV total: $11.70–16.60 MXN/lata</strong> en corridas de 50K. Baja a $9–11 con corridas de 200K+. <strong>Precio retail target $40–48 MXN, margen bruto 60%+ en DTC, 30–35% en retail.</strong></p>
+            </div>
+
+            <div class="task-grid">
+                <div class="task-grid-block">
+                    <h4>Entregables</h4>
+                    <ul class="deliverable-list">
+                        <li>Fórmula final aprobada (3 sabores documentados)</li>
+                        <li>Análisis nutrimental oficial por sabor</li>
+                        <li>Estudio de vida de anaquel a 12 meses</li>
+                        <li>Códigos GS1 asignados (3 SKUs)</li>
+                        <li>Decisión comercial 2 vs 3 al lanzamiento</li>
+                    </ul>
+                </div>
+                <div class="task-grid-block">
+                    <h4>Riesgos comunes</h4>
+                    <ul class="risk-list">
+                        <li>Cafeína fuera de rango regulatorio: reformular = 6 semanas de atraso</li>
+                        <li>No medir vida de anaquel: rechazo automático de buyers premium</li>
+                        <li>Lanzar 3 SKUs sin tracción: 3x inventario inmovilizado</li>
+                        <li>Maquila estándar sin capacidad UHT aseptic: sabor inferior</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+<!-- ========= FASE 3 ========= -->
+<section class="section" id="fase3">
+    <div class="section-header">
+        <div class="section-num"><em>03</em></div>
+        <div class="section-title-block">
+            <div class="section-eyebrow">Fase tres · Corto-mediano plazo</div>
+            <h2>Validación comercial</h2>
+        </div>
+        <div class="section-duration"><strong>Mes 5 — Mes 8</strong>~ 12 semanas</div>
+    </div>
+
+    <p class="section-intro">Antes del lanzamiento masivo, hay que validar que la gente <strong>compra y recompra</strong> — no solo que "le gusta". Esta fase usa una primera corrida piloto (10K–30K unidades) para probar producto en mercado real con bajo riesgo.</p>
+
+    <!-- TASK 3.1 -->
+    <div class="task-block">
+        <div class="task-header">
+            <div class="task-header-left">
+                <h3>3.1 — Corrida piloto y testing en mercado</h3>
+                <div class="task-meta">
+                    <span class="task-meta-item priority-high">Prioridad alta</span>
+                    <span class="task-meta-item">Semana 18–24</span>
+                    <span class="task-meta-item">Owner: COO</span>
+                </div>
+            </div>
+            <div class="task-progress" data-task="3.1"><strong>0/6</strong> tareas</div>
+        </div>
+        <div class="task-body">
+            <div class="task-why">
+                <strong>Por qué importa</strong>
+                Una corrida de 10K–30K unidades vale $100K–$300K MXN. Permite probar el producto en mercado real, recoger feedback, ajustar, y construir tracción narrativa para inversionistas y buyers — todo antes de comprometerse a corridas grandes.
+            </div>
+
+            <ul class="checklist" data-section="3.1">
+                <li><div class="checkbox"></div><div class="check-text">Negociar <strong>corrida piloto con maquilador</strong> (ver tabla de maquilas más abajo). MOQ típico para corrida piloto: 10K–20K latas/sabor</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Validar etiquetas con <strong>asesor regulatorio antes</strong> de imprimir. Errores de NOM-051 = imprimir 30K latas inservibles</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Producir <strong>3,000–5,000 unidades de muestreo</strong> sin etiqueta comercial (etiqueta "promocional/no comercial") para focus groups, eventos, sampling masivo</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Realizar <strong>focus groups formales</strong> (3 grupos de 8–10 personas, 2 ciudades). Costo: $150K–$300K MXN. Feedback estructurado de empaque, sabor, precio percibido</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Sampling en <strong>4–6 eventos clave</strong> alineados al target premium: festivales gastronómicos (Mesamérica, México Selection), eventos de diseño (Design Week MX, Inédito), conferencias de productividad/business, cafeterías de especialidad en activaciones de fin de semana, popup en hoteles boutique</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Iterar fórmula/empaque según feedback. <strong>Si los focus groups dicen "demasiado dulce" o "demasiado herbal", arreglen ahora</strong>, no después de 200K latas en bodega</div></li>
+            </ul>
+
+            <div class="task-grid">
+                <div class="task-grid-block">
+                    <h4>Entregables</h4>
+                    <ul class="deliverable-list">
+                        <li>20K+ unidades producidas y disponibles</li>
+                        <li>Reporte de focus groups</li>
+                        <li>Sample collection: ~5K unidades</li>
+                        <li>Documento de iteraciones</li>
+                    </ul>
+                </div>
+                <div class="task-grid-block">
+                    <h4>Riesgos comunes</h4>
+                    <ul class="risk-list">
+                        <li>Saltar focus groups por "ahorrar tiempo"</li>
+                        <li>Comprometer corrida grande sin piloto</li>
+                        <li>Confundir feedback de fans con feedback real</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TASK 3.2 -->
+    <div class="task-block">
+        <div class="task-header">
+            <div class="task-header-left">
+                <h3>3.2 — Estrategia de pricing y go-to-market inicial</h3>
+                <div class="task-meta">
+                    <span class="task-meta-item priority-high">Prioridad alta</span>
+                    <span class="task-meta-item">Semana 20–24</span>
+                    <span class="task-meta-item">Owner: CEO + CMO</span>
+                </div>
+            </div>
+            <div class="task-progress" data-task="3.2"><strong>0/6</strong> tareas</div>
+        </div>
+        <div class="task-body">
+            <div class="task-why">
+                <strong>Por qué importa</strong>
+                El precio es la decisión estratégica más importante. Demasiado bajo: no hay margen para crecer ni rentar a Walmart, y se erosiona la percepción premium del empaque negro mate + dorado. Demasiado alto: no rotan. La regla en café RTD premium en MX: <strong>price parity o ligero premium vs Starbucks Doubleshot ($38–42)</strong>, posicionando el extra valor con la propuesta visual y funcional.
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Canal</th>
+                            <th>Precio sugerido (PVP)</th>
+                            <th>Margen para nosotros</th>
+                            <th>Comentario</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>DTC e-commerce (zavera.com)</strong></td>
+                            <td class="num">$45–55 MXN</td>
+                            <td class="num">60–68%</td>
+                            <td>Mejor margen, base de clientes propia, suscripción</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Amazon / MercadoLibre</strong></td>
+                            <td class="num">$48–58 MXN</td>
+                            <td class="num">38–48%</td>
+                            <td>Comisión 15% + envío + IVA</td>
+                        </tr>
+                        <tr>
+                            <td><strong>HORECA premium (cafeterías, hoteles)</strong></td>
+                            <td class="num">$55–75 MXN</td>
+                            <td class="num">45–55%</td>
+                            <td>Volumen bajo, prestigio alto, brand building</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tiendas premium (City Market, Green Corner)</strong></td>
+                            <td class="num">$42–48 MXN</td>
+                            <td class="num">38–45%</td>
+                            <td>Target premium ideal para ZAVÉRA</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Retail moderno (HEB, Chedraui Selecto)</strong></td>
+                            <td class="num">$38–44 MXN</td>
+                            <td class="num">22–28%</td>
+                            <td>Volumen, pero -costos de listado, rappel, mermas</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Walmart MX (mes 16+)</strong></td>
+                            <td class="num">$36–42 MXN</td>
+                            <td class="num">18–24%</td>
+                            <td>Volumen alto. Riesgo: erosionar percepción premium</td>
+                        </tr>
+                        <tr>
+                            <td><strong>OXXO (mes 18+)</strong></td>
+                            <td class="num">$38–42 MXN</td>
+                            <td class="num">22–28%</td>
+                            <td>Solo si la marca ya construyó equity premium</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <ul class="checklist" data-section="3.2">
+                <li><div class="checkbox"></div><div class="check-text">Definir <strong>precio público sugerido (PVP)</strong> para ZAVÉRA: $42–48 MXN/lata. Documentar política de descuentos por canal</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Construir <strong>cascada de descuento</strong>: PVP → list price → trade allowance → off-invoice → net pocket. Para café RTD premium el net pocket no debe bajar de $26 MXN</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Decidir <strong>canales de lanzamiento iniciales (3–5 canales premium)</strong>. Recomendación para ZAVÉRA: <strong>DTC zavera.com + Mercado Libre + 15–20 cafeterías de especialidad + 5–10 hoteles boutique + oficinas WeWork/Selina</strong>. NO gimnasios masivos, NO retail moderno todavía</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Construir <strong>e-commerce DTC en zavera.com</strong> sobre Shopify México. Stack: Shopify + Klaviyo + Meta Pixel + GA4. Hero copy alineado a "ZAVÉRA no es solo una bebida, es una elección" del brief. Costo setup: $60K–$150K</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Definir <strong>política de envíos</strong>: free shipping con compra mínima ($600). Foco en CDMX/MTY/GDL/QRO en primera fase</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Estructurar <strong>oferta de pre-venta y suscripción</strong>: 4-pack sabor único, 12-pack mix de los 3 sabores, suscripción mensual con 15% descuento. La suscripción es clave en café RTD — replica el ritual</div></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- TASK 3.3 -->
+    <div class="task-block">
+        <div class="task-header">
+            <div class="task-header-left">
+                <h3>3.3 — Tracción inicial: primeros 50 puntos de venta</h3>
+                <div class="task-meta">
+                    <span class="task-meta-item priority-med">Prioridad media</span>
+                    <span class="task-meta-item">Semana 22–32</span>
+                    <span class="task-meta-item">Owner: CMO + ventas</span>
+                </div>
+            </div>
+            <div class="task-progress" data-task="3.3"><strong>0/5</strong> tareas</div>
+        </div>
+        <div class="task-body">
+            <div class="task-why">
+                <strong>Por qué importa</strong>
+                Esta es la fase donde más marcas mexicanas mueren — entre el lanzamiento piloto y la madurez. Necesitan generar tracción real (rotación, NPS, recompra) en canales propios antes de pretender entrar a retail moderno.
+            </div>
+
+            <ul class="checklist" data-section="3.3">
+                <li><div class="checkbox"></div><div class="check-text">Construir lista de <strong>30–50 cuentas objetivo premium</strong>: cafeterías de especialidad (Cardinal, Quentin, Camino a Comala, Buna 42, Café Avellaneda, Boicot), hoteles boutique (Habita, Condesa DF, Hotel Carlota, Hotel Habita Monterrey), oficinas premium (WeWork, Selina, Público), restaurantes top-100, gourmet shops (Delirio, Rosetta tienda)</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Diseñar <strong>kit de venta premium</strong>: catálogo impreso elegante (consistente con el ADN de marca), sample case con las 3 latas, precio mayorista, política de exhibición. Recomendación: contratar 1 vendedor con experiencia en café especialidad o RTD premium, no genérico</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Negociar <strong>condiciones razonables</strong>: pago a 30 días para cuentas chicas, consignación SOLO si es cuenta estratégica de prestigio (Hotel Habita, cafetería bandera). Nunca consignación por defecto</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Implementar <strong>tracking de rotación</strong> por punto de venta. Métrica clave: <strong>latas por tienda por semana (LPS)</strong>. Para café RTD premium en cafetería de especialidad, target sano es 8–15 LPS. Para retail moderno premium (City Market) target es 12–20 LPS</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Lanzar <strong>e-commerce DTC en paralelo</strong>: paid social en Instagram + TikTok + LinkedIn (target ejecutivo) + Google. Influencers en lifestyle, café, productividad, design (no fitness extremo). CAC objetivo: &lt; $250 MXN, recompra rate &gt; 30% (suscripción facilita esto)</div></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+<!-- ========= FASE 4 ========= -->
+<section class="section" id="fase4">
+    <div class="section-header">
+        <div class="section-num"><em>04</em></div>
+        <div class="section-title-block">
+            <div class="section-eyebrow">Fase cuatro · Mediano plazo</div>
+            <h2>Operación y legal</h2>
+        </div>
+        <div class="section-duration"><strong>Mes 6 — Mes 9</strong>(en paralelo a Fase 3)</div>
+    </div>
+
+    <p class="section-intro">El layer regulatorio y operativo. <strong>COFEPRIS, NOM-051, NOM-218, marca registrada, contratos con maquila, ERP/contabilidad, logística</strong>. Si no se hace bien aquí, no hay retail moderno posible — los buyers de Walmart auditan todo esto.</p>
+
+    <!-- TASK 4.1 -->
+    <div class="task-block">
+        <div class="task-header">
+            <div class="task-header-left">
+                <h3>4.1 — Cumplimiento COFEPRIS y regulatorio</h3>
+                <div class="task-meta">
+                    <span class="task-meta-item priority-high">Prioridad alta</span>
+                    <span class="task-meta-item">Semana 18–32</span>
+                    <span class="task-meta-item">Owner: COO + asesor regulatorio</span>
+                </div>
+            </div>
+            <div class="task-progress" data-task="4.1"><strong>0/8</strong> tareas</div>
+        </div>
+        <div class="task-body">
+            <div class="task-why">
+                <strong>Por qué importa</strong>
+                Este es el filtro más subestimado. Una multa de COFEPRIS o un retiro de mercado por etiquetado incorrecto puede liquidar el negocio. Buyers de retail moderno piden ver Aviso de Funcionamiento, certificados de análisis, y cumplimiento NOM-051/218 documentado.
+            </div>
+
+            <ul class="checklist" data-section="4.1">
+                <li><div class="checkbox"></div><div class="check-text">Contratar <strong>asesor regulatorio especializado en alimentos/bebidas</strong>. Empresas en MX: Regulatory Solutions, Asesoría COFEPRIS, Lemus Consultores. Honorarios: $30K–$80K MXN para proceso completo</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Tramitar <strong>Aviso de Funcionamiento ante COFEPRIS</strong> (obligatorio para todas las empresas que producen, importan o comercializan alimentos/bebidas). Trámite gratuito vía COFEPRIS digital pero con requisitos técnicos</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Solicitar <strong>responsable sanitario</strong> (puede ser interno o externo, debe estar registrado en COFEPRIS)</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Cumplimiento <strong>NOM-051-SCFI/SSA1-2010</strong> (etiquetado general): octágonos de advertencia si aplican. Bebida sin azúcar pero con cafeína = leyenda obligatoria sobre cafeína</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Cumplimiento <strong>NOM-218-SSA1-2011</strong> (bebidas saborizadas no alcohólicas) — define límites de cafeína, edulcorantes, declaraciones</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Validar <strong>declaraciones nutrimentales y funcionales permitidas</strong>. Frases prohibidas tipo "energiza", "te despierta" o "mejora el rendimiento" requieren respaldo y muchas veces son rechazadas</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Registrar <strong>marca de agua / código de lote / fecha de caducidad</strong> en cada lata según NOM-251 (BPM en alimentos)</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Si planean exportar a EUA, paralelizar registro <strong>FDA Facility Registration + FCE</strong> (Food Canning Establishment)</div></li>
+            </ul>
+
+            <div class="callout warning">
+                <div class="callout-header">⚠ Restricciones para bebidas con cafeína en MX</div>
+                <h4>Lo que probablemente no saben (todavía)</h4>
+                <p>La <strong>Ley General de Salud (Art. 215 bis)</strong> y la NOM-218 imponen restricciones específicas a bebidas con cafeína: leyendas obligatorias ("Contiene cafeína, evítese su ingesta en menores de 12 años, mujeres embarazadas y personas sensibles"), límites de cafeína por envase, y restricción a la combinación con alcohol. Algunos estados (Querétaro, NL) tienen restricciones adicionales en venta a menores.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- TASK 4.2 -->
+    <div class="task-block">
+        <div class="task-header">
+            <div class="task-header-left">
+                <h3>4.2 — Selección de maquilador y contratos de manufactura</h3>
+                <div class="task-meta">
+                    <span class="task-meta-item priority-high">Prioridad alta</span>
+                    <span class="task-meta-item">Semana 14–24</span>
+                    <span class="task-meta-item">Owner: COO</span>
+                </div>
+            </div>
+            <div class="task-progress" data-task="4.2"><strong>0/6</strong> tareas</div>
+        </div>
+        <div class="task-body">
+            <div class="task-why">
+                <strong>Por qué importa</strong>
+                Para una marca nueva, maquilar es 100% el camino correcto. Pero ZAVÉRA tiene un requisito particular que filtra la lista: <strong>capacidad UHT aseptic para café RTD</strong>. No cualquier embotelladora de energéticas o aguas saborizadas tiene esa línea. Y las que sí la tienen suelen tener MOQs más altos.
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Maquilador</th>
+                            <th>Ubicación</th>
+                            <th>MOQ típico</th>
+                            <th>Capacidad para café RTD</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Bebidas Funcionales SA</strong></td>
+                            <td>Edomex</td>
+                            <td class="num">15K–40K</td>
+                            <td>Bebidas premium, té, kombucha, RTD funcionales — buen fit para ZAVÉRA</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Beverage Industries</strong></td>
+                            <td>Querétaro</td>
+                            <td class="num">30K–60K</td>
+                            <td>Lata aluminio, validar capacidad UHT aseptic específica</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Embotelladora del Bajío</strong></td>
+                            <td>Guanajuato</td>
+                            <td class="num">30K–80K</td>
+                            <td>Lata y PET, flexible con startups, validar UHT</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Aga Bebidas</strong></td>
+                            <td>Jalisco</td>
+                            <td class="num">25K–60K</td>
+                            <td>Lata aluminio energéticas/isotónicos. Confirmar capacidad café</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Refrescos Mundet (Arca)</strong></td>
+                            <td>Varios</td>
+                            <td class="num">100K+ latas</td>
+                            <td>Volumen alto, marcas grandes — opción para mes 12+ cuando crezca demanda</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <ul class="checklist" data-section="4.2">
+                <li><div class="checkbox"></div><div class="check-text">Hacer <strong>RFP a 4–5 maquiladores</strong> con specs ZAVÉRA: 3 sabores (Original, Moka Caramel, Vainilla), café real RTD con agave, lata 355ml aluminio con varnish mate negro + dorado metálico, <strong>proceso UHT aseptic obligatorio</strong>, vida de anaquel 12 meses, MOQ inicial 30K/sabor para corrida piloto</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Visitar mínimo <strong>2 plantas finalistas</strong>. Validar certificaciones: ISO 22000, FSSC 22000, HACCP, Buenas Prácticas COFEPRIS</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Negociar <strong>contrato de maquila</strong> con: precio fijo por bote, escalonado por volumen, propiedad de fórmula, NDA, exclusividad opcional, cláusula de salida</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Definir <strong>esquema de insumos</strong>: ¿el maquilador compra todo, o ustedes proveen latas/etiquetas? El segundo modelo da más control y mejor precio en volumen</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Establecer <strong>lead times realistas</strong>: 6–10 semanas desde PO hasta producto en bodega (incluye sourcing de latas y etiquetas, programación de planta, producción, QA)</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Acordar <strong>QA y rechazos</strong>: % de merma aceptable (típico 1–3%), responsabilidad por defectos, pruebas microbiológicas por lote</div></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- TASK 4.3 -->
+    <div class="task-block">
+        <div class="task-header">
+            <div class="task-header-left">
+                <h3>4.3 — Logística, almacén y ERP</h3>
+                <div class="task-meta">
+                    <span class="task-meta-item priority-med">Prioridad media</span>
+                    <span class="task-meta-item">Semana 22–32</span>
+                    <span class="task-meta-item">Owner: COO</span>
+                </div>
+            </div>
+            <div class="task-progress" data-task="4.3"><strong>0/5</strong> tareas</div>
+        </div>
+        <div class="task-body">
+            <div class="task-why">
+                <strong>Por qué importa</strong>
+                Un palet de bebida pesa 600–800 kg y ocupa 1.2m². Sin logística estructurada, terminan rentando minibodegas a precio de oro y haciendo entregas con su carro propio. Profesionalizar esto es lo que separa una marca seria de un proyecto.
+            </div>
+
+            <ul class="checklist" data-section="4.3">
+                <li><div class="checkbox"></div><div class="check-text">Decidir <strong>almacén</strong>: opciones — bodega propia (rentar 200–500 m²), 3PL (Mailamericas, Mexipostal, Estafeta Cargo), o hub en el mismo maquilador (común en arranques)</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Implementar <strong>ERP/sistema de inventarios</strong>: para arrancar Bind ERP (PYME mexicana), Odoo, o incluso Tray + hojas de cálculo. Cuando crezcan: SAP B1, NetSuite</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Definir <strong>carriers de última milla</strong>: para DTC (DHL, Estafeta, 99Minutos), para B2B (FedEx, transportes especializados, flota propia para CDMX)</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Implementar <strong>contabilidad fiscal</strong>: Aspel, Contpaq, o despacho contable externo. CFDI 4.0 obligatorio</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Sacar <strong>facturación electrónica + complemento de carta porte</strong> (obligatorio para movimientos &gt; ciertos km)</div></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+<!-- ========= FASE 5 ========= -->
+<section class="section" id="fase5">
+    <div class="section-header">
+        <div class="section-num"><em>05</em></div>
+        <div class="section-title-block">
+            <div class="section-eyebrow">Fase cinco · Mediano plazo</div>
+            <h2>Lanzamiento oficial</h2>
+        </div>
+        <div class="section-duration"><strong>Mes 9 — Mes 12</strong>~ 12 semanas</div>
+    </div>
+
+    <p class="section-intro">Lanzamiento público, campaña de marca, expansión a 100–150 puntos de venta premium, influencer marketing escalado en 3 olas, y construcción de evidencia comercial sólida. <strong>Aquí se construye la narrativa que se llevarán al buyer de 7-Eleven primero, OXXO después.</strong></p>
+
+    <div class="callout">
+        <div class="callout-header">Principio rector — Distribución antes que demanda</div>
+        <h4>Influencers se activan SOLO cuando el producto está disponible</h4>
+        <p>La regla de oro CPG: si alguien ve un post de un influencer y quiere probar el producto, debe poder comprarlo en menos de 48 horas. Sin esa "ventana de intención" cerrada, el dinero en marketing se quema. ZAVÉRA debe tener <strong>al menos 50 PDV físicos + DTC funcionando</strong> antes del primer peso pagado a un influencer.</p>
+    </div>
+
+    <!-- TASK 5.1 - SAMPLING ORGÁNICO -->
+    <div class="task-block">
+        <div class="task-header">
+            <div class="task-header-left">
+                <h3>5.1 — Influencer Wave 1: Sampling silencioso (orgánico)</h3>
+                <div class="task-meta">
+                    <span class="task-meta-item priority-high">Prioridad alta</span>
+                    <span class="task-meta-item">Mes 4–7</span>
+                    <span class="task-meta-item">Owner: CMO</span>
+                </div>
+            </div>
+            <div class="task-progress" data-task="5.1"><strong>0/6</strong> tareas</div>
+        </div>
+        <div class="task-body">
+            <div class="task-why">
+                <strong>Por qué importa</strong>
+                El primer influencer NO debe ser pagado. Un post genuino de alguien que probó el producto y le encantó vale 10x más que un post pagado con "#ad". Esta wave silenciosa también funciona como <strong>test de producto</strong>: si menos del 30% de los receptores postea orgánicamente, hay un problema con la fórmula o la presentación que hay que arreglar antes de gastar capital en marketing.
+            </div>
+
+            <ul class="checklist" data-section="5.1">
+                <li><div class="checkbox"></div><div class="check-text">Construir lista de <strong>30–50 perfiles afines al ADN de marca</strong>. Categorías: nano-influencers de café especialidad (1K–15K), baristas reconocidos en MX, creadores de productividad/lifestyle, diseñadores, fotógrafos editorial. <strong>NO fitness extremo, NO gym bros, NO mid-tier genéricos</strong></div></li>
+                <li><div class="checkbox"></div><div class="check-text">Diseñar <strong>kit de envío premium</strong>: caja negra con tipografía dorada (consistente con marca), las 3 latas, nota personalizada escrita a mano, "lookbook" con la historia, sin call-to-action explícito. Costo por kit: $150–250 MXN. Total: $7K–12K para 50 envíos</div></li>
+                <li><div class="checkbox"></div><div class="check-text"><strong>Cero contrato, cero exigencia.</strong> Solo el producto presentado bien y libertad total de postear o no. Este punto es contraintuitivo pero crítico: la presión legal mata la espontaneidad</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Trackear menciones orgánicas en Instagram, TikTok, X durante 60 días post-envío. Hashtags monitoreados: #zavera #drinkzavera #cafefriomx #cafertd</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Métrica de éxito: <strong>≥30% de los receptores postean orgánicamente en 30 días</strong>. Si menos, no escalar a Wave 2 — primero arreglar el problema (producto, empaque, kit, target equivocado)</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Identificar a los <strong>5–10 "amplificadores naturales"</strong>: los que postearon orgánicamente y generaron engagement. Esos son los candidatos para colaboraciones pagadas en Wave 2</div></li>
+            </ul>
+
+            <div class="task-grid">
+                <div class="task-grid-block">
+                    <h4>Entregables</h4>
+                    <ul class="deliverable-list">
+                        <li>Lista curada de 30–50 perfiles</li>
+                        <li>Reporte de menciones orgánicas a 60 días</li>
+                        <li>Lista corta de amplificadores para Wave 2</li>
+                    </ul>
+                </div>
+                <div class="task-grid-block">
+                    <h4>Riesgos comunes</h4>
+                    <ul class="risk-list">
+                        <li>Mandar a influencers fitness/gym (audiencia equivocada)</li>
+                        <li>Pedir post a cambio (mata la autenticidad)</li>
+                        <li>Saltar esta wave por "ahorrar tiempo": es la más eficiente</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TASK 5.2 - INFLUENCERS PAGADOS -->
+    <div class="task-block">
+        <div class="task-header">
+            <div class="task-header-left">
+                <h3>5.2 — Influencer Wave 2: Micro-influencers pagados</h3>
+                <div class="task-meta">
+                    <span class="task-meta-item priority-high">Prioridad alta</span>
+                    <span class="task-meta-item">Mes 8–11</span>
+                    <span class="task-meta-item">Owner: CMO</span>
+                </div>
+            </div>
+            <div class="task-progress" data-task="5.2"><strong>0/7</strong> tareas</div>
+        </div>
+        <div class="task-body">
+            <div class="task-why">
+                <strong>Por qué importa</strong>
+                Aquí ya hay producto en 50+ PDV y DTC funcionando. Es momento de invertir capital en escalar awareness, pero con tracking riguroso. La métrica que importa NO es impressions ni alcance — es <strong>ventas atribuibles vía código de descuento personalizado</strong>. Sin tracking, son fuegos artificiales caros.
+            </div>
+
+            <ul class="checklist" data-section="5.2">
+                <li><div class="checkbox"></div><div class="check-text">Contratar <strong>10–20 micro-influencers</strong> (10K–100K seguidores). Tarifas en MX 2026: $10K–$50K MXN por colaboración (1 reel + 3 stories). Total budget Wave 2: <strong>$200K–$400K MXN</strong></div></li>
+                <li><div class="checkbox"></div><div class="check-text"><strong>Mix recomendado para ZAVÉRA:</strong> 40% café especialidad (baristas, dueños de cafeterías), 30% productividad/lifestyle ejecutivo, 20% diseño/foodie editorial, 10% wildcard (música, arquitectura, autos premium)</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Cada colaboración debe incluir: <strong>código de descuento personalizado</strong> (ZAVERA-FULANO15) + UTM tracking + landing page específica. Sin estos elementos NO se contrata</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Brief creativo claro: respeto al ADN visual de marca (negro mate, dorado, serif elegante), no permitir filtros saturados ni estética "fitness". Los activos del influencer deben verse como contenido editorial, no como ad</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Métrica de éxito por colaboración: <strong>≥10 ventas atribuibles en 30 días vía código</strong>. Si menos, no renovar. Si más de 30, evaluar contrato a 6 meses con flat fee + ambassador tier</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Considerar <strong>colaboración estratégica con cafeterías de especialidad</strong> (no influencers personas): Cardinal, Buna 42, Café Avellaneda. Que ellos posteen "ZAVÉRA es el primer RTD que servimos" tiene autoridad técnica que un influencer no puede comprar</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Cortar agresivamente lo que no funciona. <strong>Regla de los 14 días</strong>: si una colaboración no genera tracción medible en 2 semanas, no esperar 90 días — pivotear</div></li>
+            </ul>
+
+            <div class="callout warning">
+                <div class="callout-header">⚠ Trampa común — Mid-tier sin tracción</div>
+                <h4>No saltarse a 200K+ followers antes de tiempo</h4>
+                <p>Es tentador contratar a un creator con 300K seguidores en mes 8. Pero los mid-tier cobran $80K–$200K MXN por post y tienen audiencias menos engaged que los micro. La regla: <strong>nunca contratar mid-tier antes de probar conversión con 5+ micro-influencers exitosos</strong>. Si los micros funcionan, el ROI escala. Si no funcionan los micros, los mid tampoco van a funcionar.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- TASK 5.3 - LANZAMIENTO INTEGRADO -->
+    <div class="task-block">
+        <div class="task-header">
+            <div class="task-header-left">
+                <h3>5.3 — Plan de lanzamiento integrado y PR</h3>
+                <div class="task-meta">
+                    <span class="task-meta-item priority-high">Prioridad alta</span>
+                    <span class="task-meta-item">Mes 9–12</span>
+                    <span class="task-meta-item">Owner: CMO</span>
+                </div>
+            </div>
+            <div class="task-progress" data-task="5.3"><strong>0/7</strong> tareas</div>
+        </div>
+        <div class="task-body">
+            <div class="task-why">
+                <strong>Por qué importa</strong>
+                Un lanzamiento mediocre quema oportunidad de PR, momentum y atención de buyers. Marcas premium como Olipop o La Colombe concentran 70%+ del presupuesto del año 1 en los primeros 90 días de lanzamiento. Concentren fuego, no lo dispersen 12 meses.
+            </div>
+
+            <ul class="checklist" data-section="5.3">
+                <li><div class="checkbox"></div><div class="check-text">Definir <strong>"hero campaign"</strong> con un solo big idea creativo. Slogan ZAVÉRA: "no es solo una bebida, es una elección" — capitalizar. Producción de assets: video master 30/15/6 seg, statics, fotografía de producto premium</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Plan de <strong>relaciones públicas</strong>: pitch a Forbes MX, Expansión, El CEO, El Universal Vida y Estilo, Food and Travel MX, Vogue MX, Travesías. PR boutique: $80K–$200K MXN/mes</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Activación de <strong>paid media</strong>: Meta + TikTok + LinkedIn (ejecutivos) + Google Search. Presupuesto: $200K–$500K MXN/mes durante 3 meses de lanzamiento. Foco geográfico: CDMX, MTY, GDL, QRO, Mérida</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Evento de <strong>lanzamiento físico</strong> en CDMX y/o MTY con prensa, influencers Wave 1+2, partners, baristas top, periodistas de café. Inversión $300K–$600K. KPI: 30+ menciones de prensa en 30 días post-evento</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Activaciones tipo <strong>guerrilla y sampling</strong>: Reforma 222, Polanco, Roma-Condesa, San Pedro Garza García, Valle Oriente, salida de oficinas premium (Torre Reforma, Torre Mayor, Punto Polanco) en horario AM y PM. 50K muestras en 90 días</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Considerar <strong>partnership con app de movilidad premium</strong> (Cabify, DiDi VIP): muestras en viajes ejecutivos AM. Intercepta exactamente al target Grab and Go camino a oficina</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Tracking semanal de <strong>brand awareness, share of voice, search volume, CAC, ROAS, ventas atribuibles por código de influencer</strong>. Dashboard en Looker Studio o equivalente. Junta semanal de los 3 socios para revisar</div></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- TASK 5.4 - EXPANSIÓN COMERCIAL -->
+    <div class="task-block">
+        <div class="task-header">
+            <div class="task-header-left">
+                <h3>5.4 — Expansión comercial: 100+ PDV premium + HORECA</h3>
+                <div class="task-meta">
+                    <span class="task-meta-item priority-high">Prioridad alta</span>
+                    <span class="task-meta-item">Mes 9–12</span>
+                    <span class="task-meta-item">Owner: CMO + key account</span>
+                </div>
+            </div>
+            <div class="task-progress" data-task="5.4"><strong>0/6</strong> tareas</div>
+        </div>
+        <div class="task-body">
+            <div class="task-why">
+                <strong>Por qué importa</strong>
+                100 puntos de venta premium con rotación demostrada construye la "story" que necesitan para 7-Eleven (mes 14) y después OXXO (mes 16+). Sin esto, no hay narrativa de tracción.
+            </div>
+
+            <ul class="checklist" data-section="5.4">
+                <li><div class="checkbox"></div><div class="check-text">Contratar <strong>1–2 ejecutivos de cuenta clave</strong> con experiencia previa en CPG premium o café (ex-Nestlé Nespresso, Cirsa, Starbucks comercial, Bimbo Premium, Femsa Café). Sueldo $40K–$70K + variable. Tienen agendas con buyers que ustedes no tienen</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Mapear y abrir <strong>cadenas premium primero</strong>: La Comer, City Market, HEB Monterrey/CDMX, Chedraui Selecto. Antes que Walmart o Soriana</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Negociar <strong>alianza con HORECA premium</strong>: hoteles boutique (grupo Habita, Hoteles Boutique de México), restaurantes top-50 de Mesa Reservada/50 Best, salones de eventos premium. Volumen bajo, prestigio alto, fotografía orgánica que viene de clientes</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Llegar a <strong>cafeterías de especialidad nacionales</strong>: Cielito Querido (~200 unidades), Punta del Cielo, Café Avellaneda, Cardinal, Café Tomás. ZAVÉRA es el RTD que estos cafés necesitan para after-hours y grab-and-go</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Construir <strong>partnerships de marca</strong>: marcas de moda y lifestyle premium mexicanas (Sandra Weil, Pineda Covalin), apps de productividad (Notion, Sunsama), espacios de coworking premium. Sampling cruzado con audiencias afines</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Implementar <strong>dashboard semanal de tracción</strong>: PDV totales, LPS (latas por mes por PDV), recompra DTC, NPS, suscriptores activos, share of voice en café RTD</div></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+<!-- ========= FASE 6 ========= -->
+<section class="section" id="fase6">
+    <div class="section-header">
+        <div class="section-num"><em>06</em></div>
+        <div class="section-title-block">
+            <div class="section-eyebrow">Fase seis · Mediano-largo plazo</div>
+            <h2>Retail premium → masivo</h2>
+        </div>
+        <div class="section-duration"><strong>Mes 9 — Mes 24+</strong>Estrategia híbrida en dos olas</div>
+    </div>
+
+    <p class="section-intro">La estrategia de retail de ZAVÉRA es <strong>híbrida en dos olas</strong>: primero retail premium + 7-Eleven (mes 9–14), después conveniencia masiva con SKU diseñado específicamente (mes 14–24). Esta secuencia captura el insight Grab and Go sin canibalizar el premium ni quemarse contra Andatti Cold Brew sin awareness.</p>
+
+    <div class="callout success">
+        <div class="callout-header">✓ Por qué híbrida y no all-in en OXXO</div>
+        <h4>Andatti Cold Brew es el competidor real, y FEMSA juega en casa</h4>
+        <p>OXXO vende ~1 millón de cafés Andatti diarios — incluida la línea Cold Brew embotellada que está en miles de tiendas. Entrar a OXXO sin awareness previa significa pelear de frente contra una marca propia de FEMSA en su propio canal. El plan híbrido construye marca premium primero (mes 9–14), después entra a 7-Eleven (más ágil que OXXO), y finalmente OXXO con SKU diferenciado para conveniencia. Resultado: misma meta, menos riesgo de quemarse.</p>
+    </div>
+
+    <div class="callout warning">
+        <div class="callout-header">⚠ Realidad operativa del retail moderno mexicano</div>
+        <h4>Lo que cuesta realmente entrar a cada canal</h4>
+        <p><strong>Cuota de alta de proveedor:</strong> $0–$50K MXN según cadena. <strong>Slotting fee por SKU por tienda:</strong> $200–$2,000 MXN (1 SKU x 100 tiendas = $20K–$200K). <strong>Rappel/contraprestación anual:</strong> 8–18% de ventas. <strong>Promociones obligatorias:</strong> 4–6 al año (descuentos del 15–25%). <strong>Devoluciones por baja rotación:</strong> 100% del costo. <strong>Plazo de pago:</strong> 60–90 días en autoservicio, hasta 90 días en OXXO. Para entrar a 100 tiendas Walmart hay que poder financiar ~$1.5–2.5M MXN en working capital del primer año.</p>
+    </div>
+
+    <!-- TASK 6.1 - WAVE A -->
+    <div class="task-block">
+        <div class="task-header">
+            <div class="task-header-left">
+                <h3>6.1 — Wave A: Retail premium + 7-Eleven (mes 9–14)</h3>
+                <div class="task-meta">
+                    <span class="task-meta-item priority-high">Prioridad alta</span>
+                    <span class="task-meta-item">Mes 9–14</span>
+                    <span class="task-meta-item">Owner: CEO + key account</span>
+                </div>
+            </div>
+            <div class="task-progress" data-task="6.1"><strong>0/8</strong> tareas</div>
+        </div>
+        <div class="task-body">
+            <div class="task-why">
+                <strong>Por qué importa</strong>
+                Esta es la wave que construye narrativa. La Comer/City Market validan el premium. HEB cubre Norte. <strong>7-Eleven es la jugada estratégica clave</strong>: tiene 2,000+ tiendas, su proceso de codificación es 30–50% más rápido que OXXO (4–6 meses vs 6–12), y aceptan marcas emergentes con mejor disposición. Sirve como "prueba de concepto" del canal Grab and Go antes de pelear con Andatti en OXXO.
+            </div>
+
+            <ul class="checklist" data-section="6.1">
+                <li><div class="checkbox"></div><div class="check-text">Empezar contacto con <strong>La Comer / City Market</strong> en mes 9. Es el lab ideal: comprador premium, decisión rápida (60–90 días), 70 tiendas escala razonable. Categoría: bebidas frías premium o café especialidad RTD</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Atacar <strong>HEB Monterrey</strong> en paralelo (mes 9–10): hub regional para bebidas premium, target NSE alto, decisión local (no consultas a HQ Texas)</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Empezar <strong>proceso de codificación con 7-Eleven</strong> en mes 9–10. Esto es crítico: el proceso toma 4–6 meses, así que iniciar ahora significa primera venta en mes 13–15. <strong>NO esperar a tener todas las cadenas premium abiertas para arrancar 7-Eleven</strong></div></li>
+                <li><div class="checkbox"></div><div class="check-text">Para 7-Eleven: presentar <strong>la lata 355ml premium ($38–42 PVP)</strong> como SKU inicial. No bajar a 250ml todavía — primero validar conversión en formato premium. Si funciona, OXXO viene fácil después</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Construir <strong>sell-in deck profesional</strong> (20–30 slides): mercado RTD coffee, marca ZAVÉRA, producto, evidencia Wave 1+2 de influencers, tracción premium, propuesta comercial, plan de trade marketing</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Documentar <strong>category story</strong>: por qué la cadena gana metiendo ZAVÉRA. Incremento de ticket promedio, atracción de shopper NSE A/B/C+, diferenciación premium vs Andatti masivo, ocupación del espacio "café especialidad RTD" que hoy solo tiene Starbucks</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Tener listos <strong>estudios y certificados</strong>: COA por lote, NOM-051, NOM-218, Aviso COFEPRIS, certificado de marca registrada, vida de anaquel comprobada (12+ meses), seguros de responsabilidad civil</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Validar <strong>capacidad de surtido</strong>: si 7-Eleven compra para 200 tiendas en zona piloto, ¿pueden surtir 30–50K cajas en 30 días sin romper la cadena? Si no, definir ramp-up gradual con el buyer</div></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- TASK 6.2 - DESARROLLO SKU 250ML -->
+    <div class="task-block">
+        <div class="task-header">
+            <div class="task-header-left">
+                <h3>6.2 — Desarrollo SKU 250ml para conveniencia masiva</h3>
+                <div class="task-meta">
+                    <span class="task-meta-item priority-high">Prioridad alta</span>
+                    <span class="task-meta-item">Mes 11–14</span>
+                    <span class="task-meta-item">Owner: COO + CMO</span>
+                </div>
+            </div>
+            <div class="task-progress" data-task="6.2"><strong>0/6</strong> tareas</div>
+        </div>
+        <div class="task-body">
+            <div class="task-why">
+                <strong>Por qué importa</strong>
+                OXXO/Walmart/Soriana operan en un rango de precio donde la lata 355ml premium a $42 no rota contra Andatti a $25 y Café Olé a $28. La solución es un <strong>SKU dedicado al canal masivo</strong>: misma marca, mismo café real, misma elegancia visual, formato 250ml a $30–34 PVP. Esto NO es bajar la calidad — es ajustar el ticket de entrada al hábito del canal.
+            </div>
+
+            <ul class="checklist" data-section="6.2">
+                <li><div class="checkbox"></div><div class="check-text">Decidir <strong>portafolio dual</strong>: lata 355ml premium ($42 PVP, retail premium + cafeterías + 7-Eleven) y lata 250ml conveniencia ($30–32 PVP, OXXO/Walmart/Soriana). Misma fórmula, mismo branding, formato distinto</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Validar <strong>economía del SKU 250ml</strong>: CMV target $9 MXN/lata (corridas 200K+, lata más chica reduce costo de aluminio), net pocket OXXO ~$17–18, margen bruto 47–50%. Cumple con la regla mínima de 40% margen + 22% contribución</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Mantener <strong>integridad visual</strong>: misma paleta negro mate + dorado, misma tipografía serif. La diferencia perceptible es el tamaño, no la calidad. La lata 250ml debe verse como "shot" o "expresión concentrada" — narrativa Grab and Go consciente</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Validación regulatoria del SKU 250ml: análisis nutrimental, NOM-051, NOM-218 actualizados al nuevo formato. Costo: $30K–$60K MXN adicional</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Códigos GS1 nuevos para los 250ml (3 códigos adicionales si se mantienen los 3 sabores, o 2 si solo se lanzan Original + Vainilla en formato chico)</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Decidir <strong>narrativa de comunicación dual</strong>: el SKU 250ml necesita un descriptor distinto ("ZAVÉRA Express", "ZAVÉRA Shot", "ZAVÉRA Go", o solo distinguirse por formato). NO comunicar como "versión barata" — eso erosiona el premium</div></li>
+            </ul>
+
+            <div class="callout">
+                <div class="callout-header">Estrategia de posicionamiento dual</div>
+                <h4>Cómo Starbucks lo hace y por qué funciona</h4>
+                <p>Starbucks vende Doubleshot 200ml en OXXO ($45) y Frappuccino 281ml en supermercado ($55). Son productos distintos para canales distintos, ambos premium, sin canibalización. Café Olé hace lo mismo con 281ml (conveniencia) y 330ml (despensa). El portafolio dual NO es una concesión — es el modelo estándar de la categoría. ZAVÉRA debe pensarlo así desde el inicio.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- TASK 6.3 - WAVE B -->
+    <div class="task-block">
+        <div class="task-header">
+            <div class="task-header-left">
+                <h3>6.3 — Wave B: OXXO, Walmart y conveniencia masiva (mes 14–24)</h3>
+                <div class="task-meta">
+                    <span class="task-meta-item priority-high">Prioridad alta</span>
+                    <span class="task-meta-item">Mes 14–24+</span>
+                    <span class="task-meta-item">Owner: CEO + key account</span>
+                </div>
+            </div>
+            <div class="task-progress" data-task="6.3"><strong>0/7</strong> tareas</div>
+        </div>
+        <div class="task-body">
+            <div class="task-why">
+                <strong>Por qué importa</strong>
+                Aquí ya tienen 14 meses de tracción premium, marca conocida en target NSE A/B/C+, y SKU 250ml diseñado específicamente para conveniencia. Es el momento de capitalizar el insight original de Grab and Go masivo, pero desde una posición de fuerza, no de necesidad.
+            </div>
+
+            <ul class="checklist" data-section="6.3">
+                <li><div class="checkbox"></div><div class="check-text">Empezar contacto con <strong>Walmart MX</strong> en mes 12–13: planear corrida regional primero (15–30 tiendas en una zona — recomendación: NL/JAL), demostrar LPS, expandir nacional. Lata 355ml en Walmart Express + Walmart Supercenter</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Iniciar <strong>codificación OXXO</strong> en mes 13–14 con la lata 250ml. El proceso toma 6–12 meses, así que primera venta esperada en mes 18–22. Aplicar vía portal Retail Link de FEMSA</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Para OXXO específicamente: preparar <strong>narrativa anti-Andatti</strong>. No competir contra ellos por precio (imposible) — competir por <strong>experiencia premium accesible</strong>. ZAVÉRA es el "Starbucks del OXXO en lata". El precio target $30–32 vs Starbucks Doubleshot $45 da diferenciación clara</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Considerar <strong>gas stations premium en paralelo</strong> (Mobil Mart, BP Wild Bean, Total): mes 12–14, captura el insight original de Grab and Go en carretera con shopper NSE alto. Lata 355ml premium a $40</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Preparar <strong>pricing arquitectura</strong> consciente para OXXO: PVP $30, list $24, neto $17 después de rappel/promo. Margen neto debe quedar &gt;40% bruto, &gt;22% contribución. Si no, no entra</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Diseñar <strong>plan de trade marketing</strong> para conveniencia: exhibiciones especiales en cooler frontal, head of shelf en sección café, sampling in-store en horario AM, paid placement en circulares. Walmart espera contraparte de 10–15% de ventas el primer año</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Reservar <strong>Soriana, Chedraui hipermercado, Costco</strong> para mes 18+: una vez consolidado el SKU 250ml en OXXO/7-Eleven y el 355ml en autoservicio premium</div></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- TASK 6.2 LEGACY (estrategia por cadena) -->
+    <div class="task-block">
+        <div class="task-header">
+            <div class="task-header-left">
+                <h3>6.4 — Tabla de referencia por cadena</h3>
+                <div class="task-meta">
+                    <span class="task-meta-item priority-med">Referencia estratégica</span>
+                    <span class="task-meta-item">Mes 9–24</span>
+                    <span class="task-meta-item">Owner: CEO + key account</span>
+                </div>
+            </div>
+            <div class="task-progress" data-task="6.4"><strong>0/6</strong> tareas</div>
+        </div>
+        <div class="task-body">
+            <div class="task-why">
+                <strong>Por qué importa</strong>
+                No todas las cadenas valen lo mismo y no todas hay que atacar al mismo tiempo. La secuencia óptima minimiza working capital y maximiza aprendizaje.
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Cadena</th>
+                            <th>Tiendas</th>
+                            <th>SKU recomendado</th>
+                            <th>Wave</th>
+                            <th>Timing</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>La Comer / City Market</strong></td>
+                            <td class="num">~70</td>
+                            <td>355ml premium</td>
+                            <td>Wave A</td>
+                            <td>Mes 9–12</td>
+                        </tr>
+                        <tr>
+                            <td><strong>HEB</strong></td>
+                            <td class="num">~70</td>
+                            <td>355ml premium</td>
+                            <td>Wave A</td>
+                            <td>Mes 9–12</td>
+                        </tr>
+                        <tr>
+                            <td><strong>7-Eleven</strong></td>
+                            <td class="num">~2,000</td>
+                            <td>355ml premium</td>
+                            <td>Wave A</td>
+                            <td>Mes 13–15 (codificar desde mes 9)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Chedraui Selecto</strong></td>
+                            <td class="num">~80</td>
+                            <td>355ml premium</td>
+                            <td>Wave A</td>
+                            <td>Mes 12–14</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Gas premium (Mobil, BP, Total)</strong></td>
+                            <td class="num">~3,500</td>
+                            <td>355ml premium</td>
+                            <td>Wave A</td>
+                            <td>Mes 12–14</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Walmart MX</strong></td>
+                            <td class="num">~3,300</td>
+                            <td>355ml + 250ml</td>
+                            <td>Wave B</td>
+                            <td>Mes 14–18 (regional → nacional)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>OXXO</strong></td>
+                            <td class="num">~23,000</td>
+                            <td>250ml conveniencia</td>
+                            <td>Wave B</td>
+                            <td>Mes 18–24 (codificar desde mes 13)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Soriana Híper</strong></td>
+                            <td class="num">~800</td>
+                            <td>355ml + 250ml</td>
+                            <td>Wave B</td>
+                            <td>Mes 16–20</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Costco MX</strong></td>
+                            <td class="num">~40</td>
+                            <td>12-pack 355ml</td>
+                            <td>Wave B</td>
+                            <td>Mes 18+ (alto volumen por SKU)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <ul class="checklist" data-section="6.4">
+                <li><div class="checkbox"></div><div class="check-text">Wave A primero: <strong>La Comer + HEB + 7-Eleven en paralelo</strong> en mes 9–10. Estos tres dan validación premium (La Comer/HEB) + prueba de Grab and Go masivo (7-Eleven) sin pelear con Andatti todavía</div></li>
+                <li><div class="checkbox"></div><div class="check-text">No saltarse <strong>HORECA premium y gas stations</strong>: son el "secreto" del Grab and Go premium. Mobil Mart, BP Wild Bean, Total — captan al ejecutivo en carretera/mañana sin canibalizar el OXXO futuro</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Iniciar <strong>codificación OXXO desde mes 13</strong> (proceso 6–12 meses). NO esperar a tener resultados de 7-Eleven — paralelizar es clave para cumplir el roadmap</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Para <strong>Walmart MX</strong>: empezar regional (NL/JAL, 15–30 tiendas) en mes 14, demostrar LPS, expandir nacional. Walmart Express + Walmart Supercenter primero, Bodega Aurrerá después con SKU 250ml</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Reservar <strong>Soriana, Chedraui hipermercado y Sam's Club</strong> para mes 16–20: cuando ya hay tracción demostrable y el SKU 250ml está validado en otros canales</div></li>
+                <li><div class="checkbox"></div><div class="check-text">Evaluar <strong>Costco México</strong> en mes 18+: 40 tiendas, formato 12-pack, decisión vía buyer single, alto volumen por SKU. Pero exigentes en margen y rotación — solo si LPS &gt; 25 en otros canales</div></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="callout success">
+        <div class="callout-header">✓ Métrica de éxito de retail moderno</div>
+        <h4>El número que importa: LPS (latas por tienda por mes)</h4>
+        <p>Si su LPS es <strong>&lt; 8</strong>, los van a sacar en 6 meses. Si es <strong>8–15</strong>, los mantienen pero les piden promociones agresivas. Si es <strong>&gt; 18</strong>, los expanden y les dan más espacio. La obsesión operativa después de entrar a retail moderno es <strong>defender el LPS</strong> — eso depende de awareness, exhibición correcta (junto a Starbucks Doubleshot, no junto a Monster), precio y disponibilidad.</p>
+    </div>
+</section>
+
+
+<!-- ========= KPIs ========= -->
+<section class="section" id="kpis">
+    <div class="section-header">
+        <div class="section-num"><em>07</em></div>
+        <div class="section-title-block">
+            <div class="section-eyebrow">Anexo</div>
+            <h2>Tablero de KPIs</h2>
+        </div>
+        <div class="section-duration"><strong>Revisión mensual</strong>Ritual obligatorio de socios</div>
+    </div>
+
+    <p class="section-intro">Lo que no se mide, no se gestiona. Defínan estos KPIs desde el día 1, monitoreen mensualmente, y hagan una <strong>"junta de socios" formal el último viernes de cada mes</strong> para revisarlos. No la salten ni cuando todo va bien.</p>
+
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Categoría</th>
+                    <th>KPI</th>
+                    <th>Meta año 1</th>
+                    <th>Meta año 2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="3"><strong>Comercial</strong></td>
+                    <td>Puntos de venta activos (premium)</td>
+                    <td class="num">150–250</td>
+                    <td class="num">1,500+</td>
+                </tr>
+                <tr>
+                    <td>LPS promedio (latas/PDV/mes)</td>
+                    <td class="num">10+</td>
+                    <td class="num">15+</td>
+                </tr>
+                <tr>
+                    <td>Ventas anuales (latas)</td>
+                    <td class="num">200K–400K</td>
+                    <td class="num">1.5M–3M</td>
+                </tr>
+                <tr>
+                    <td rowspan="3"><strong>Marca</strong></td>
+                    <td>Awareness en target NSE A/B/C+</td>
+                    <td class="num">6–10%</td>
+                    <td class="num">20–30%</td>
+                </tr>
+                <tr>
+                    <td>NPS</td>
+                    <td class="num">&gt; 45</td>
+                    <td class="num">&gt; 60</td>
+                </tr>
+                <tr>
+                    <td>Followers IG/TikTok</td>
+                    <td class="num">20K–40K</td>
+                    <td class="num">120K+</td>
+                </tr>
+                <tr>
+                    <td rowspan="4"><strong>DTC / E-commerce</strong></td>
+                    <td>Ventas online (% total)</td>
+                    <td class="num">20–30%</td>
+                    <td class="num">12–18%</td>
+                </tr>
+                <tr>
+                    <td>Suscriptores activos</td>
+                    <td class="num">800–1,500</td>
+                    <td class="num">5,000+</td>
+                </tr>
+                <tr>
+                    <td>Recompra rate</td>
+                    <td class="num">&gt; 30%</td>
+                    <td class="num">&gt; 40%</td>
+                </tr>
+                <tr>
+                    <td>CAC blended</td>
+                    <td class="num">&lt; $250</td>
+                    <td class="num">&lt; $180</td>
+                </tr>
+                <tr>
+                    <td rowspan="3"><strong>Financiero</strong></td>
+                    <td>Margen bruto consolidado</td>
+                    <td class="num">38–48%</td>
+                    <td class="num">45–52%</td>
+                </tr>
+                <tr>
+                    <td>Cash burn mensual</td>
+                    <td class="num">&lt; $400K</td>
+                    <td class="num">Break-even</td>
+                </tr>
+                <tr>
+                    <td>Runway</td>
+                    <td class="num">&gt; 12 meses</td>
+                    <td class="num">&gt; 12 meses</td>
+                </tr>
+                <tr>
+                    <td rowspan="2"><strong>Operación</strong></td>
+                    <td>Fill rate (% de pedidos surtidos a tiempo)</td>
+                    <td class="num">&gt; 95%</td>
+                    <td class="num">&gt; 98%</td>
+                </tr>
+                <tr>
+                    <td>Mermas / devoluciones</td>
+                    <td class="num">&lt; 5%</td>
+                    <td class="num">&lt; 3%</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- ========= CAPITAL ========= -->
+<section class="section" id="capital">
+    <div class="section-header">
+        <div class="section-num"><em>08</em></div>
+        <div class="section-title-block">
+            <div class="section-eyebrow">Anexo</div>
+            <h2>Estructura de capital</h2>
+        </div>
+        <div class="section-duration"><strong>$3.5M–$8M MXN</strong>Capital total ciclo 18 meses</div>
+    </div>
+
+    <p class="section-intro">Distribución típica de capital para llevar una bebida funcional desde fórmula hasta primer año en retail moderno en México. Estos rangos son <strong>pesos mexicanos reales 2026</strong>, no estimados optimistas.</p>
+
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Concepto</th>
+                    <th>Rango bajo (MXN)</th>
+                    <th>Rango alto (MXN)</th>
+                    <th>% del total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Setup legal y constitución</strong></td>
+                    <td class="num">$30,000</td>
+                    <td class="num">$80,000</td>
+                    <td class="num">1%</td>
+                </tr>
+                <tr>
+                    <td><strong>Branding e identidad</strong></td>
+                    <td class="num">$250,000</td>
+                    <td class="num">$800,000</td>
+                    <td class="num">8%</td>
+                </tr>
+                <tr>
+                    <td><strong>Desarrollo de fórmula y testing</strong></td>
+                    <td class="num">$150,000</td>
+                    <td class="num">$400,000</td>
+                    <td class="num">4%</td>
+                </tr>
+                <tr>
+                    <td><strong>Regulatorio (COFEPRIS, NOM, IMPI)</strong></td>
+                    <td class="num">$80,000</td>
+                    <td class="num">$200,000</td>
+                    <td class="num">2%</td>
+                </tr>
+                <tr>
+                    <td><strong>Primera corrida piloto (50K unidades)</strong></td>
+                    <td class="num">$500,000</td>
+                    <td class="num">$800,000</td>
+                    <td class="num">10%</td>
+                </tr>
+                <tr>
+                    <td><strong>Inventario para escalamiento</strong></td>
+                    <td class="num">$800,000</td>
+                    <td class="num">$2,000,000</td>
+                    <td class="num">25%</td>
+                </tr>
+                <tr>
+                    <td><strong>Marketing y lanzamiento (12 meses)</strong></td>
+                    <td class="num">$1,000,000</td>
+                    <td class="num">$2,500,000</td>
+                    <td class="num">30%</td>
+                </tr>
+                <tr>
+                    <td><strong>Equipo y nómina (12 meses, 2–3 personas)</strong></td>
+                    <td class="num">$600,000</td>
+                    <td class="num">$1,500,000</td>
+                    <td class="num">15%</td>
+                </tr>
+                <tr>
+                    <td><strong>Slotting fees y trade marketing retail</strong></td>
+                    <td class="num">$0</td>
+                    <td class="num">$500,000</td>
+                    <td class="num">3%</td>
+                </tr>
+                <tr>
+                    <td><strong>Buffer de operación (15–20%)</strong></td>
+                    <td class="num">$500,000</td>
+                    <td class="num">$1,500,000</td>
+                    <td class="num">12%</td>
+                </tr>
+                <tr style="background: var(--accent-bg); font-weight: 700;">
+                    <td><strong>TOTAL</strong></td>
+                    <td class="num">$3,910,000</td>
+                    <td class="num">$10,280,000</td>
+                    <td class="num">100%</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="callout">
+        <div class="callout-header">Nota sobre fundraising</div>
+        <h4>Caminos realistas para levantar este capital</h4>
+        <p><strong>Opción A — Bootstrap + F&F:</strong> los socios + amigos/familia, 100% control, presión enorme. Realista hasta $2–3M MXN. <strong>Opción B — Ronda ángel:</strong> 5–10 inversionistas individuales (CDMX, MTY tienen ecosistema sólido en CPG), tickets $250K–$1M MXN, dilución 15–25%. Bueno hasta $5–6M MXN. <strong>Opción C — VC seed:</strong> aplica solo si demuestran tracción primero (mes 9+). Funds activos en CPG MX: BlueMountain Capital, Femsa Ventures, IGNIA, Latitud. Ticket $1–5M USD, dilución 18–25%. <strong>Opción D — Deuda NAFIN/FIRA:</strong> programas de financiamiento para PYMES alimentarias, tasas competitivas, requiere garantías y operación demostrable.</p>
+    </div>
+</section>
+
+<!-- ========= ERRORES FATALES ========= -->
+<section class="section" id="errores">
+    <div class="section-header">
+        <div class="section-num"><em>09</em></div>
+        <div class="section-title-block">
+            <div class="section-eyebrow">Anexo · Cierre</div>
+            <h2>Errores fatales</h2>
+        </div>
+        <div class="section-duration"><strong>Lectura obligatoria</strong>Para los 3 socios</div>
+    </div>
+
+    <p class="section-intro">Los 10 errores que matan a marcas de bebidas funcionales nuevas en México. Ninguno es nuevo. Todos son evitables. <strong>Imprimir, pegar en pared, releer mensualmente.</strong></p>
+
+    <div class="task-block">
+        <div class="task-body" style="padding: 32px;">
+            <ol style="list-style: none; counter-reset: errors;">
+                <li style="counter-increment: errors; padding: 18px 0; border-bottom: 1px solid var(--line-soft); display: grid; grid-template-columns: 50px 1fr; gap: 20px; align-items: start;">
+                    <span style="font-family: var(--serif); font-style: italic; font-size: 32px; color: var(--accent); font-weight: 300; line-height: 1;">01</span>
+                    <div>
+                        <strong style="display: block; margin-bottom: 4px; font-size: 15px;">Querer entrar a Walmart al mes 6</strong>
+                        <span style="color: var(--ink-soft); font-size: 13px; line-height: 1.5;">Sin tracción demostrada, los devuelven en 6 meses. Construyan rotación primero en canales chicos.</span>
+                    </div>
+                </li>
+                <li style="counter-increment: errors; padding: 18px 0; border-bottom: 1px solid var(--line-soft); display: grid; grid-template-columns: 50px 1fr; gap: 20px; align-items: start;">
+                    <span style="font-family: var(--serif); font-style: italic; font-size: 32px; color: var(--accent); font-weight: 300; line-height: 1;">02</span>
+                    <div>
+                        <strong style="display: block; margin-bottom: 4px; font-size: 15px;">No vesting entre socios</strong>
+                        <span style="color: var(--ink-soft); font-size: 13px; line-height: 1.5;">Si un fundador se va sin vesting, se lleva su parte completa aunque haya aportado solo unos meses. Eso bloquea decisiones y espanta inversionistas.</span>
+                    </div>
+                </li>
+                <li style="counter-increment: errors; padding: 18px 0; border-bottom: 1px solid var(--line-soft); display: grid; grid-template-columns: 50px 1fr; gap: 20px; align-items: start;">
+                    <span style="font-family: var(--serif); font-style: italic; font-size: 32px; color: var(--accent); font-weight: 300; line-height: 1;">03</span>
+                    <div>
+                        <strong style="display: block; margin-bottom: 4px; font-size: 15px;">Etiquetado sin asesor regulatorio</strong>
+                        <span style="color: var(--ink-soft); font-size: 13px; line-height: 1.5;">Imprimir 50K latas con etiqueta NOM-051 incorrecta = $400K MXN al bote de basura.</span>
+                    </div>
+                </li>
+                <li style="counter-increment: errors; padding: 18px 0; border-bottom: 1px solid var(--line-soft); display: grid; grid-template-columns: 50px 1fr; gap: 20px; align-items: start;">
+                    <span style="font-family: var(--serif); font-style: italic; font-size: 32px; color: var(--accent); font-weight: 300; line-height: 1;">04</span>
+                    <div>
+                        <strong style="display: block; margin-bottom: 4px; font-size: 15px;">Posicionamiento blando o equivocado</strong>
+                        <span style="color: var(--ink-soft); font-size: 13px; line-height: 1.5;">"Bebida saludable para todos" = invisible. Y peor: tratar a ZAVÉRA como bebida energética. La categoría correcta es café RTD funcional premium. Respetar esa decisión define todo.</span>
+                    </div>
+                </li>
+                <li style="counter-increment: errors; padding: 18px 0; border-bottom: 1px solid var(--line-soft); display: grid; grid-template-columns: 50px 1fr; gap: 20px; align-items: start;">
+                    <span style="font-family: var(--serif); font-style: italic; font-size: 32px; color: var(--accent); font-weight: 300; line-height: 1;">05</span>
+                    <div>
+                        <strong style="display: block; margin-bottom: 4px; font-size: 15px;">Subestimar capital de trabajo</strong>
+                        <span style="color: var(--ink-soft); font-size: 13px; line-height: 1.5;">Retail paga a 60–90 días pero la maquila cobra de contado. El gap mata más empresas que la falta de demanda.</span>
+                    </div>
+                </li>
+                <li style="counter-increment: errors; padding: 18px 0; border-bottom: 1px solid var(--line-soft); display: grid; grid-template-columns: 50px 1fr; gap: 20px; align-items: start;">
+                    <span style="font-family: var(--serif); font-style: italic; font-size: 32px; color: var(--accent); font-weight: 300; line-height: 1;">06</span>
+                    <div>
+                        <strong style="display: block; margin-bottom: 4px; font-size: 15px;">Naming sin búsqueda IMPI</strong>
+                        <span style="color: var(--ink-soft); font-size: 13px; line-height: 1.5;">Lanzar marca, gastar $500K en branding, recibir oposición de IMPI = empezar de cero.</span>
+                    </div>
+                </li>
+                <li style="counter-increment: errors; padding: 18px 0; border-bottom: 1px solid var(--line-soft); display: grid; grid-template-columns: 50px 1fr; gap: 20px; align-items: start;">
+                    <span style="font-family: var(--serif); font-style: italic; font-size: 32px; color: var(--accent); font-weight: 300; line-height: 1;">07</span>
+                    <div>
+                        <strong style="display: block; margin-bottom: 4px; font-size: 15px;">No medir LPS por PDV</strong>
+                        <span style="color: var(--ink-soft); font-size: 13px; line-height: 1.5;">Crecer en cantidad de tiendas mientras la rotación cae es ilusión de escala. Defender LPS &gt; abrir tiendas.</span>
+                    </div>
+                </li>
+                <li style="counter-increment: errors; padding: 18px 0; border-bottom: 1px solid var(--line-soft); display: grid; grid-template-columns: 50px 1fr; gap: 20px; align-items: start;">
+                    <span style="font-family: var(--serif); font-style: italic; font-size: 32px; color: var(--accent); font-weight: 300; line-height: 1;">08</span>
+                    <div>
+                        <strong style="display: block; margin-bottom: 4px; font-size: 15px;">Sobre-inventariar el primer año</strong>
+                        <span style="color: var(--ink-soft); font-size: 13px; line-height: 1.5;">200K latas en bodega vs 50K vendidas = $2.5M MXN inmovilizados. Empiecen con corridas pequeñas.</span>
+                    </div>
+                </li>
+                <li style="counter-increment: errors; padding: 18px 0; border-bottom: 1px solid var(--line-soft); display: grid; grid-template-columns: 50px 1fr; gap: 20px; align-items: start;">
+                    <span style="font-family: var(--serif); font-style: italic; font-size: 32px; color: var(--accent); font-weight: 300; line-height: 1;">09</span>
+                    <div>
+                        <strong style="display: block; margin-bottom: 4px; font-size: 15px;">Marketing en lugar de distribución</strong>
+                        <span style="color: var(--ink-soft); font-size: 13px; line-height: 1.5;">Ad spend sin disponibilidad real = quemar dinero. La regla CPG: distribución antes que demanda.</span>
+                    </div>
+                </li>
+                <li style="counter-increment: errors; padding: 18px 0; display: grid; grid-template-columns: 50px 1fr; gap: 20px; align-items: start;">
+                    <span style="font-family: var(--serif); font-style: italic; font-size: 32px; color: var(--accent); font-weight: 300; line-height: 1;">10</span>
+                    <div>
+                        <strong style="display: block; margin-bottom: 4px; font-size: 15px;">Romper la relación con la maquila</strong>
+                        <span style="color: var(--ink-soft); font-size: 13px; line-height: 1.5;">Las maquilas en MX que aceptan startups son contadas. Quemarse con una cierra puertas en toda la industria. Tratarlas como socios, no como proveedores.</span>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<div class="footer">
+    <div>Plan estratégico · Rev. 1.0 · Confidencial</div>
+    <div class="footer-actions">
+        <button class="btn-action" onclick="window.print()">Imprimir / PDF</button>
+        <button class="btn-action" onclick="resetProgress()">Reset progreso</button>
+    </div>
+</div>
+
+</main>
+</div>
+
+<!-- Supabase SDK para sincronización en tiempo real -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+// ============================================================
+// CONFIGURACIÓN DE SUPABASE — REEMPLAZAR ESTOS DOS VALORES
+// ============================================================
+// Después de crear tu proyecto en supabase.com, ve a:
+//   Project Settings → API → Project URL y anon public key
+// Y reemplaza los valores de abajo:
+
+const SUPABASE_URL = 'TU_SUPABASE_URL_AQUI';
+const SUPABASE_KEY = 'TU_SUPABASE_ANON_KEY_AQUI';
+
+// ============================================================
+// No tocar nada más abajo
+// ============================================================
+
+const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+// === Identificar al usuario ===
+function getUserName() {
+    let name = localStorage.getItem('zavera_user_name');
+    if (!name) {
+        name = prompt('¿Cuál es tu nombre? (se mostrará en las tareas que marques)');
+        if (!name) name = 'Anónimo';
+        localStorage.setItem('zavera_user_name', name.trim());
+    }
+    return name;
+}
+
+const currentUser = getUserName();
+
+// Mostrar usuario actual en el header
+function showUserBadge() {
+    const badge = document.createElement('div');
+    badge.id = 'user-badge';
+    badge.style.cssText = 'position:fixed;top:16px;right:16px;background:var(--accent);color:#fff;padding:8px 14px;border-radius:20px;font-size:13px;font-weight:600;z-index:1000;box-shadow:0 2px 8px rgba(0,0,0,0.2);cursor:pointer;';
+    badge.innerHTML = `👤 ${currentUser} <span style="opacity:0.7;font-size:11px;margin-left:6px;">cambiar</span>`;
+    badge.onclick = () => {
+        const newName = prompt('Cambiar nombre:', currentUser);
+        if (newName && newName.trim()) {
+            localStorage.setItem('zavera_user_name', newName.trim());
+            location.reload();
+        }
+    };
+    document.body.appendChild(badge);
+}
+showUserBadge();
+
+// === Estado local en memoria ===
+const taskState = {}; // { "1.1-0": { checked: true, user: "Daniel", at: "2026-01-15..." } }
+
+// === Cargar estado inicial desde Supabase ===
+async function loadAllTasks() {
+    const { data, error } = await supabase.from('zavera_tasks').select('*');
+    if (error) {
+        console.error('Error cargando tareas:', error);
+        showError('No se pudo cargar el progreso. Revisa la configuración de Supabase.');
+        return;
+    }
+    data.forEach(row => {
+        taskState[row.task_id] = { checked: row.checked, user: row.updated_by, at: row.updated_at };
+    });
+    applyStateToUI();
+    updateAllProgress();
+}
+
+function applyStateToUI() {
+    document.querySelectorAll('.checklist').forEach(list => {
+        const sectionKey = list.dataset.section;
+        const items = list.querySelectorAll('li');
+        items.forEach((item, idx) => {
+            const taskId = `${sectionKey}-${idx}`;
+            const state = taskState[taskId];
+            if (state && state.checked) {
+                item.classList.add('checked');
+                renderUserStamp(item, state.user, state.at);
+            } else {
+                item.classList.remove('checked');
+                removeUserStamp(item);
+            }
+        });
+    });
+}
+
+function renderUserStamp(item, user, at) {
+    let stamp = item.querySelector('.user-stamp');
+    if (!stamp) {
+        stamp = document.createElement('div');
+        stamp.className = 'user-stamp';
+        stamp.style.cssText = 'font-size:11px;color:var(--ink-muted);margin-top:4px;font-style:italic;';
+        item.querySelector('.check-text').appendChild(stamp);
+    }
+    const date = at ? new Date(at).toLocaleDateString('es-MX', {day:'numeric', month:'short'}) : '';
+    stamp.textContent = `✓ ${user}${date ? ' · ' + date : ''}`;
+}
+
+function removeUserStamp(item) {
+    const stamp = item.querySelector('.user-stamp');
+    if (stamp) stamp.remove();
+}
+
+// === Toggle de tarea con sync a Supabase ===
+async function toggleTask(item, sectionKey, idx) {
+    const taskId = `${sectionKey}-${idx}`;
+    const willCheck = !item.classList.contains('checked');
+
+    // Optimistic update (UI inmediato)
+    item.classList.toggle('checked', willCheck);
+    if (willCheck) {
+        renderUserStamp(item, currentUser, new Date().toISOString());
+    } else {
+        removeUserStamp(item);
+    }
+    updateAllProgress();
+
+    // Sync a Supabase
+    const { error } = await supabase.from('zavera_tasks').upsert({
+        task_id: taskId,
+        checked: willCheck,
+        updated_by: currentUser,
+        updated_at: new Date().toISOString()
+    }, { onConflict: 'task_id' });
+
+    if (error) {
+        console.error('Error guardando:', error);
+        // Rollback
+        item.classList.toggle('checked', !willCheck);
+        showError('No se pudo guardar. Revisa tu conexión.');
+        updateAllProgress();
+    } else {
+        taskState[taskId] = { checked: willCheck, user: currentUser, at: new Date().toISOString() };
+    }
+}
+
+// === Suscripción en tiempo real ===
+function subscribeToChanges() {
+    supabase.channel('zavera_tasks_changes')
+        .on('postgres_changes', { event: '*', schema: 'public', table: 'zavera_tasks' }, payload => {
+            const row = payload.new || payload.old;
+            if (!row) return;
+            // Solo actualizar si el cambio NO viene de mí
+            if (payload.new && payload.new.updated_by !== currentUser) {
+                taskState[row.task_id] = {
+                    checked: payload.new.checked,
+                    user: payload.new.updated_by,
+                    at: payload.new.updated_at
+                };
+                applyStateToUI();
+                updateAllProgress();
+                showToast(`${payload.new.updated_by} ${payload.new.checked ? 'marcó' : 'desmarcó'} una tarea`);
+            }
+        })
+        .subscribe();
+}
+
+function showToast(msg) {
+    const toast = document.createElement('div');
+    toast.style.cssText = 'position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#1a1a1a;color:#fff;padding:10px 20px;border-radius:8px;font-size:13px;z-index:1001;box-shadow:0 4px 12px rgba(0,0,0,0.3);';
+    toast.textContent = msg;
+    document.body.appendChild(toast);
+    setTimeout(() => toast.remove(), 3000);
+}
+
+function showError(msg) {
+    const err = document.createElement('div');
+    err.style.cssText = 'position:fixed;top:60px;right:16px;background:#c0392b;color:#fff;padding:10px 16px;border-radius:8px;font-size:13px;z-index:1001;max-width:300px;';
+    err.textContent = msg;
+    document.body.appendChild(err);
+    setTimeout(() => err.remove(), 5000);
+}
+
+// === Inicializar listeners de checkboxes ===
+document.querySelectorAll('.checklist').forEach(list => {
+    const sectionKey = list.dataset.section;
+    const items = list.querySelectorAll('li');
+    items.forEach((item, idx) => {
+        item.addEventListener('click', (e) => {
+            // Evitar que el click en el stamp del usuario haga toggle
+            if (e.target.classList.contains('user-stamp')) return;
+            toggleTask(item, sectionKey, idx);
+        });
+    });
+});
+
+// === Calcular progreso por tarea y global ===
+function updateAllProgress() {
+    let totalAll = 0, doneAll = 0;
+    document.querySelectorAll('.checklist').forEach(list => {
+        const items = list.querySelectorAll('li');
+        const done = list.querySelectorAll('li.checked').length;
+        const total = items.length;
+        totalAll += total;
+        doneAll += done;
+        const sectionKey = list.dataset.section;
+        const indicator = document.querySelector(`.task-progress[data-task="${sectionKey}"]`);
+        if (indicator) {
+            indicator.innerHTML = `<strong>${done}/${total}</strong> tareas`;
+        }
+    });
+    const pct = totalAll > 0 ? Math.round((doneAll / totalAll) * 100) : 0;
+    const pctEl = document.getElementById('overallPct');
+    const barEl = document.getElementById('overallBar');
+    if (pctEl) pctEl.textContent = pct;
+    if (barEl) barEl.style.width = pct + '%';
+}
+
+async function resetProgress() {
+    if (!confirm('¿Reiniciar todo el avance para TODOS los socios? Esta acción es irreversible.')) return;
+    const { error } = await supabase.from('zavera_tasks').delete().neq('task_id', '');
+    if (error) {
+        showError('No se pudo reiniciar.');
+        return;
+    }
+    Object.keys(taskState).forEach(k => delete taskState[k]);
+    document.querySelectorAll('.checklist li.checked').forEach(li => {
+        li.classList.remove('checked');
+        removeUserStamp(li);
+    });
+    updateAllProgress();
+}
+
+// === Arranque ===
+loadAllTasks().then(() => subscribeToChanges());
+</script>
+
+</body>
+</html>
